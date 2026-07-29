@@ -1,0 +1,43 @@
+{
+  "expectations": [
+    {
+      "text": "The Adel prompt explicitly specifies a gray / neutral-gray background for the character sheet",
+      "passed": true,
+      "evidence": "Primary prompt: 'on a plain neutral light-gray studio background'."
+    },
+    {
+      "text": "The Adel prompt requests multiple views on one sheet, including a clear face close-up AND a full-body view showing the outfit",
+      "passed": false,
+      "evidence": "The main sheet requests only full-body views: 'Full-body turnaround showing three views side by side: front view, side profile view, and back view'. No face close-up is on that sheet; head-and-shoulders portraits appear only on a separate secondary 'Expression sheet' prompt, not the same sheet."
+    },
+    {
+      "text": "The goblin prompt requests 3 or more distinct variations of the goblin type (different builds/heights/gear) rather than a single goblin",
+      "passed": true,
+      "evidence": "Secondary 'Goblin horde variation sheet' requests 'five goblin minions standing side by side... Each goblin has one small distinguishing trait: one is slightly fatter with a torn ear; one is taller and lankier with a snaggletooth; one is tiny and wears a rusted tin can as a helmet...' (Note: the primary goblin prompt is a single goblin turnaround; the variation sheet is offered as a secondary prompt.)"
+    },
+    {
+      "text": "The response includes accept/reject QA criteria for evaluating the generated sheets (e.g., cross-view consistency, face clarity)",
+      "passed": true,
+      "evidence": "'Quality checklist before accepting a generation: Same face/character in all views of a sheet (this is the most common failure — regenerate if the three views look like siblings...)', plus checks for age drift, raincoat color consistency, species consistency."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  },
+  "timing": {
+    "executor_duration_seconds": 57.3,
+    "total_duration_seconds": 57.3
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The goblin prompt requests 3 or more distinct variations of the goblin type (different builds/heights/gear) rather than a single goblin",
+        "reason": "This baseline passed via an optional secondary 'horde variation sheet' while its primary goblin prompt is a single goblin. If the skill's intent is that the group sheet IS the primary deliverable for group characters, the assertion should require the variation sheet to be the main/only goblin asset, not an add-on."
+      }
+    ],
+    "overall": "Assertions mostly discriminate well; the face-close-up-on-same-sheet check correctly separated skill from baseline."
+  }
+}

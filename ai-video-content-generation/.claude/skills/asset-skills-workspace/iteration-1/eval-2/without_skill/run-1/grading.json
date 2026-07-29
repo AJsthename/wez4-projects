@@ -1,0 +1,43 @@
+{
+  "expectations": [
+    {
+      "text": "The bedroom prompt explicitly specifies a three-quarter (3/4) camera angle into the room showing two walls / depth of the space",
+      "passed": false,
+      "evidence": "Prompt specifies 'Wide establishing shot... eye-level camera from the doorway'. It mentions 'window and bed on the back wall, desk on the side wall' (implying two walls) but never specifies a three-quarter/3/4 camera angle explicitly."
+    },
+    {
+      "text": "The bedroom prompt describes the layout spatially — object positions relative to walls, window, and each other — not just an inventory list",
+      "passed": true,
+      "evidence": "'A single bed... sits directly under the room's one large window; ... Against the adjacent wall, a small wooden desk...; drawings taped to the wall above the desk...; open toy chest overflowing in the corner... window and bed on the back wall, desk on the side wall, open floor space in the middle.'"
+    },
+    {
+      "text": "The response recommends NOT generating an image asset for the beach, advising to describe it directly in the video prompt instead",
+      "passed": true,
+      "evidence": "'Sunny beach → skip the asset (or treat it as optional)... A text description inside the video prompt itself will do the job with zero extra production cost' and 'Asset 2: Sunny Beach (recommend: skip — describe in the video prompt instead)'. A fallback beach prompt is included but only 'if your pipeline requires a reference image anyway'."
+    },
+    {
+      "text": "The response includes physical-coherence QA guidance: reject plates with floating/unsupported/unattached objects and regenerate rather than fix",
+      "passed": false,
+      "evidence": "The QA checklist covers layout, tone, empty room, lighting, text/watermarks, and style match — but contains no floating/unsupported/unattached-object checks and no regenerate-rather-than-fix physics guidance."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 2,
+    "total": 4,
+    "pass_rate": 0.5
+  },
+  "timing": {
+    "executor_duration_seconds": 54.1,
+    "total_duration_seconds": 54.1
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The response recommends NOT generating an image asset for the beach, advising to describe it directly in the video prompt instead",
+        "reason": "This baseline passed while hedging ('or treat it as optional') and still delivering a full beach image prompt. If the skill's intent is a firm skip with no generated prompt, the assertion could additionally require that no beach image prompt is produced."
+      }
+    ],
+    "overall": "The 3/4-angle and physics-QA assertions are the discriminating ones; the beach-skip assertion is satisfiable by a hedged baseline."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "text": "The bedroom prompt explicitly specifies a three-quarter (3/4) camera angle into the room showing two walls / depth of the space",
+      "passed": true,
+      "evidence": "Prompt: 'camera at a three-quarter angle into the room showing two walls and the depth of the space, eye-level.' QA reinforces: 'Depth visible? You can feel the 3/4 angle — two walls and real depth between them. A flat, wall-facing shot → reject.'"
+    },
+    {
+      "text": "The bedroom prompt describes the layout spatially — object positions relative to walls, window, and each other — not just an inventory list",
+      "passed": true,
+      "evidence": "'Layout: single bed against the far wall directly under the window...; wooden desk against the right wall...; open toy chest near the left wall...; door in the left wall standing ajar; crayon drawings taped to the wall above the desk.'"
+    },
+    {
+      "text": "The response recommends NOT generating an image asset for the beach, advising to describe it directly in the video prompt instead",
+      "passed": true,
+      "evidence": "'2) Generic sunny beach — SKIP the asset... Describe it directly in the video prompt, e.g.: \"a wide sunny beach, golden sand, gentle turquoise waves...\"' No beach image prompt is provided."
+    },
+    {
+      "text": "The response includes physical-coherence QA guidance: reject plates with floating/unsupported/unattached objects and regenerate rather than fix",
+      "passed": true,
+      "evidence": "'One levitating toy means the model was sloppy everywhere — discard the whole image and regenerate a new batch, don't try to fix it.' Plus 'Everything supported? No floating toys or books...' and 'Everything attached and connected?' checks."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 37.7,
+    "total_duration_seconds": 37.7
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "No suggestions — assertions map directly to the skill's generate-vs-skip decision logic and physics QA."
+  }
+}

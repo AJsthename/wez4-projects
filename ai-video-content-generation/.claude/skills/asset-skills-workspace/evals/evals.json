@@ -1,0 +1,78 @@
+{
+  "skill_name": "asset-skills (character, prop, location, librarian, planner)",
+  "evals": [
+    {
+      "id": 0,
+      "name": "character-with-group",
+      "skill": "asset-character",
+      "prompt": "I'm working on an AI-generated short film. I need a character asset for my main character: Adel, a 9 year old girl, curious type, messy dark curls, she wears a yellow raincoat in most scenes. Also in scene 3 there's a bunch of goblin minions chasing her. Can you write the image generation prompts for these character assets?",
+      "expected_output": "Two prompts: a three-view sheet for Adel (gray background, face close-up + full body) and a multi-variation group sheet for the goblins; QA checklist included.",
+      "files": [],
+      "expectations": [
+        "The Adel prompt explicitly specifies a gray / neutral-gray background for the character sheet",
+        "The Adel prompt requests multiple views on one sheet, including a clear face close-up AND a full-body view showing the outfit",
+        "The goblin prompt requests 3 or more distinct variations of the goblin type (different builds/heights/gear) rather than a single goblin",
+        "The response includes accept/reject QA criteria for evaluating the generated sheets (e.g., cross-view consistency, face clarity)"
+      ]
+    },
+    {
+      "id": 1,
+      "name": "prop-with-interaction",
+      "skill": "asset-prop",
+      "prompt": "For my AI video I need a prop reference: a chunky 90s TV remote with lots of buttons. In one shot the grandma has to press the big power button on it specifically, so that needs to be super clear. Write me the image generation prompt for this prop asset.",
+      "expected_output": "Four-view prop sheet prompt on gray background with studio shadows/reflections, red arrow marking the power button, QA checklist covering 3D volume.",
+      "files": [],
+      "expectations": [
+        "The prompt explicitly specifies a gray / neutral-gray background",
+        "The prompt requests 3 or more views of the remote on one sheet (e.g., front, back, side, three-quarter)",
+        "The prompt includes physical-volume cues: cast shadows AND studio reflections (or equivalent surface-realism language)",
+        "A literal red arrow marking the power button is included — either prompted into the sheet or as an explicit edit-pass instruction",
+        "QA guidance includes rejecting flat / 2D-looking results"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "location-generate-vs-skip",
+      "skill": "asset-location",
+      "prompt": "I need location assets for my video: 1) Adel's messy bedroom where about half the scenes happen - bed under the window, desk covered in drawings, toys everywhere. 2) a generic sunny beach for one quick shot at the end. Write the image prompts.",
+      "expected_output": "Bedroom: 3/4-angle interior prompt with spatial layout + physical-logic QA checklist. Beach: recommendation to SKIP the asset and describe it directly in the video prompt.",
+      "files": [],
+      "expectations": [
+        "The bedroom prompt explicitly specifies a three-quarter (3/4) camera angle into the room showing two walls / depth of the space",
+        "The bedroom prompt describes the layout spatially — object positions relative to walls, window, and each other — not just an inventory list",
+        "The response recommends NOT generating an image asset for the beach, advising to describe it directly in the video prompt instead",
+        "The response includes physical-coherence QA guidance: reject plates with floating/unsupported/unattached objects and regenerate rather than fix"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "planner-script-breakdown",
+      "skill": "asset-planner",
+      "prompt": "Here's my script for a 60 second animated short called Pancake Run:\n\nScene 1: Mom is in her cozy kitchen making pancakes, flips one way too high.\nScene 2: The pancake sails out the open window.\nScene 3: The family dog bolts out the door and chases the pancake down a suburban street, past a little bakery.\nScene 4: The pancake lands on a street performer's hat, and a whole flock of pigeons swarms in.\nScene 5: Back in the kitchen, Mom shrugs, and the dog trots in with the pancake balanced on his nose.\n\nWhat assets do I need to generate before I start prompting the video shots?",
+      "expected_output": "Asset production list: characters (Mom, dog, street performer, pigeons flagged as group), locations (kitchen GENERATE/recurring, street & bakery decisions with skip test), props (pancake recurring, frying pan), production order, open questions.",
+      "files": [],
+      "expectations": [
+        "The plan identifies Mom, the dog, the pancake, and the kitchen as recurring assets that need generated references",
+        "The pigeon flock is flagged as a group needing multiple distinct variations (anti-clone rule)",
+        "Location decisions include explicit generate-vs-skip reasoning for at least one location (not every location blindly gets an asset)",
+        "A production order or prioritization is provided (recurring/blocking assets first)",
+        "The plan surfaces at least one open question or script ambiguity for the user to resolve before generation"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "librarian-register-elements",
+      "skill": "asset-librarian",
+      "prompt": "I just finished generating and approving these assets for my project Pancake Run: the mom character sheet (saved it as mom_sheet_v2.png - she has a red polka dot apron and round glasses), the kitchen location (kitchen_v1.png), and the frying pan prop that has a red arrow pointing at the handle grip (pan_v3_arrow.png). Set up whatever asset tracking we need so my video prompts can cleanly reference these.",
+      "expected_output": "assets/MANIFEST.md created with Characters/Locations/Props tables, @tags assigned (e.g. @mom, @kitchen, @pan), critical details column filled (apron, glasses, arrow), status final.",
+      "files": [],
+      "expectations": [
+        "A manifest/registry file is actually created on disk (not just described in the chat response)",
+        "Each of the three elements is assigned an @tag-style reference name (short, lowercase, prompt-ready)",
+        "All three asset filenames (mom_sheet_v2.png, kitchen_v1.png, pan_v3_arrow.png) are recorded with paths",
+        "Critical visible details are captured per element: red polka dot apron + round glasses for Mom, red arrow at the handle grip for the pan",
+        "Registered elements carry a status (e.g., final) distinguishing accepted assets from drafts"
+      ]
+    }
+  ]
+}

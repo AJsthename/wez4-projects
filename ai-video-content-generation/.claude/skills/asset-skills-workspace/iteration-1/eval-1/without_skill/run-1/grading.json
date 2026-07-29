@@ -1,0 +1,43 @@
+{
+  "expectations": [
+    {
+      "text": "The prompt explicitly specifies a gray / neutral-gray background",
+      "passed": true,
+      "evidence": "'on a plain neutral light-gray seamless background'."
+    },
+    {
+      "text": "The prompt requests 3 or more views of the remote on one sheet (e.g., front, back, side, three-quarter)",
+      "passed": false,
+      "evidence": "Primary prompt is a single view: 'shot straight-on from above (top-down view)'. The only other view is an 'Optional second angle' generated as a separate image ('If your video model accepts multiple reference images, generate a matching 3/4 perspective view') — two views total, and not on one sheet."
+    },
+    {
+      "text": "The prompt includes physical-volume cues: cast shadows AND studio reflections (or equivalent surface-realism language)",
+      "passed": false,
+      "evidence": "The prompt actually suppresses shadows: 'soft even lighting, no shadows cutting across the buttons'. No cast shadows or studio reflections are requested anywhere; surface language is limited to 'matte... plastic body' and 'glossy red rubber' button texture."
+    },
+    {
+      "text": "A literal red arrow marking the power button is included — either prompted into the sheet or as an explicit edit-pass instruction",
+      "passed": false,
+      "evidence": "No arrow of any kind appears in either prompt or the guidance; disambiguation relies only on verbal cues ('five redundant disambiguators (largest button, top-center position, red color...)')."
+    },
+    {
+      "text": "QA guidance includes rejecting flat / 2D-looking results",
+      "passed": false,
+      "evidence": "QA item (5) checks 'the remote reads as thick/chunky, not a slim modern remote' — a prop-design check, not a rejection criterion for flat/2D-looking renders. No flat/sticker-like/2D rejection guidance exists."
+    }
+  ],
+  "summary": {
+    "passed": 1,
+    "failed": 4,
+    "total": 5,
+    "pass_rate": 0.2
+  },
+  "timing": {
+    "executor_duration_seconds": 40.6,
+    "total_duration_seconds": 40.6
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "No suggestions — this eval cleanly separates skill behavior (multi-view sheet, volume cues, red-arrow annotation, flatness QA) from a competent baseline."
+  }
+}

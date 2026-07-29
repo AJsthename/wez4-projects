@@ -1,0 +1,47 @@
+{
+  "expectations": [
+    {
+      "text": "A manifest/registry file is actually created on disk (not just described in the chat response)",
+      "passed": true,
+      "evidence": "File exists on disk: outputs/assets/MANIFEST.md, containing Characters/Locations/Props tables with Tag, File, Critical details, and Status columns."
+    },
+    {
+      "text": "Each of the three elements is assigned an @tag-style reference name (short, lowercase, prompt-ready)",
+      "passed": true,
+      "evidence": "MANIFEST.md assigns '@mom', '@kitchen', '@pan_arrow' — all short, lowercase, prompt-ready."
+    },
+    {
+      "text": "All three asset filenames (mom_sheet_v2.png, kitchen_v1.png, pan_v3_arrow.png) are recorded with paths",
+      "passed": true,
+      "evidence": "Recorded with full relative paths: 'assets/characters/mom_sheet_v2.png', 'assets/locations/kitchen_v1.png', 'assets/props/pan_v3_arrow.png'; response instructs the user to move the images to these locations."
+    },
+    {
+      "text": "Critical visible details are captured per element: red polka dot apron + round glasses for Mom, red arrow at the handle grip for the pan",
+      "passed": true,
+      "evidence": "Mom's Critical details: 'red polka dot apron, round glasses'; pan's: 'red arrow points at the handle grip'."
+    },
+    {
+      "text": "Registered elements carry a status (e.g., final) distinguishing accepted assets from drafts",
+      "passed": true,
+      "evidence": "Status column shows 'final' for all three; response explains 'All three assets are marked final since you approved them... safe to reference in video prompts immediately.'"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 63.1,
+    "total_duration_seconds": 63.1
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "The kitchen entry's Critical details cell is '—' (empty). No assertion checks that the manifest captures details only when they exist / handles detail-less assets, but more importantly nothing checks that the manifest's paths point at real files — both runs record paths to images that were never moved. Consider an assertion about how missing files are handled or flagged."
+      }
+    ],
+    "overall": "All assertions pass with substantive evidence; the file-on-disk requirement was the right call and both configurations satisfied it."
+  }
+}

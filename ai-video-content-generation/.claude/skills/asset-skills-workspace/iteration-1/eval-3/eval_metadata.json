@@ -1,0 +1,13 @@
+{
+  "eval_id": 3,
+  "eval_name": "planner-script-breakdown",
+  "skill": "asset-planner",
+  "prompt": "Here's my script for a 60 second animated short called Pancake Run:\n\nScene 1: Mom is in her cozy kitchen making pancakes, flips one way too high.\nScene 2: The pancake sails out the open window.\nScene 3: The family dog bolts out the door and chases the pancake down a suburban street, past a little bakery.\nScene 4: The pancake lands on a street performer's hat, and a whole flock of pigeons swarms in.\nScene 5: Back in the kitchen, Mom shrugs, and the dog trots in with the pancake balanced on his nose.\n\nWhat assets do I need to generate before I start prompting the video shots?",
+  "assertions": [
+    "The plan identifies Mom, the dog, the pancake, and the kitchen as recurring assets that need generated references",
+    "The pigeon flock is flagged as a group needing multiple distinct variations (anti-clone rule)",
+    "Location decisions include explicit generate-vs-skip reasoning for at least one location (not every location blindly gets an asset)",
+    "A production order or prioritization is provided (recurring/blocking assets first)",
+    "The plan surfaces at least one open question or script ambiguity for the user to resolve before generation"
+  ]
+}

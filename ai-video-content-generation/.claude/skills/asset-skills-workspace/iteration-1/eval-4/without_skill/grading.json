@@ -1,0 +1,51 @@
+{
+  "expectations": [
+    {
+      "text": "A manifest/registry file is actually created on disk (not just described in the chat response)",
+      "passed": true,
+      "evidence": "Two files exist on disk: outputs/asset_manifest.json (machine-readable registry with conventions and per-asset entries) and outputs/ASSETS.md (human-readable companion)."
+    },
+    {
+      "text": "Each of the three elements is assigned an @tag-style reference name (short, lowercase, prompt-ready)",
+      "passed": true,
+      "evidence": "asset_manifest.json assigns tags '@mom', '@kitchen', '@pan'; ASSETS.md shows the same tags with usage examples in prompt text."
+    },
+    {
+      "text": "All three asset filenames (mom_sheet_v2.png, kitchen_v1.png, pan_v3_arrow.png) are recorded with paths",
+      "passed": true,
+      "evidence": "All three recorded in the 'file' fields: 'mom_sheet_v2.png', 'kitchen_v1.png', 'pan_v3_arrow.png' — as root-relative paths, with the location convention stated ('Keep the reference PNGs alongside these files in the project root (or update the file fields to relative paths if you move them into an assets/ folder)')."
+    },
+    {
+      "text": "Critical visible details are captured per element: red polka dot apron + round glasses for Mom, red arrow at the handle grip for the pan",
+      "passed": true,
+      "evidence": "Mom canonical_features: ['red polka dot apron', 'round glasses']; pan canonical_features: 'annotation: red arrow marks the handle grip point (annotation only — must NOT appear in rendered video)'."
+    },
+    {
+      "text": "Registered elements carry a status (e.g., final) distinguishing accepted assets from drafts",
+      "passed": true,
+      "evidence": "All three entries have 'status': 'approved' within a defined status scheme 'status_values: [draft, in_review, approved, retired]' plus the rule 'Video prompts must only reference assets with status approved'."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 60.2,
+    "total_duration_seconds": 60.2
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "All three asset filenames (mom_sheet_v2.png, kitchen_v1.png, pan_v3_arrow.png) are recorded with paths",
+        "reason": "Passed here with bare root-relative filenames — 'with paths' is ambiguous. If the skill mandates a specific directory layout (e.g., assets/characters/...), the assertion should name it; otherwise a baseline satisfies this trivially."
+      },
+      {
+        "reason": "The baseline scored 5/5 and arguably produced a richer registry (versioning history, status scheme, annotation-vs-design distinction for the arrow) than the with-skill run. The assertion set does not capture whatever the librarian skill is supposed to do differently (e.g., canonical manifest location/format, category folders, tag stability rules), so this eval currently cannot show skill lift."
+      }
+    ],
+    "overall": "All assertions genuinely satisfied, but the eval does not discriminate skill from baseline — consider assertions tied to the skill's specific manifest conventions."
+  }
+}

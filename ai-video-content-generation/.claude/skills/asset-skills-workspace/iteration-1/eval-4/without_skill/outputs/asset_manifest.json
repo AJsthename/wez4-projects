@@ -1,0 +1,63 @@
+{
+  "project": "Pancake Run",
+  "manifest_version": 1,
+  "updated": "2026-07-19",
+  "conventions": {
+    "tag_format": "@<asset_id> — use these tags inside video prompts; resolve each tag to the asset's `file` as an image reference attachment",
+    "file_naming": "<asset_id>_v<version>.png; bumping a version means adding a new entry version and updating `file` + `version`, never deleting history",
+    "status_values": ["draft", "in_review", "approved", "retired"],
+    "rule": "Video prompts must only reference assets with status 'approved'. Reference the tag, do not re-describe the asset from scratch — the reference image is the source of truth for appearance."
+  },
+  "assets": [
+    {
+      "id": "mom",
+      "tag": "@mom",
+      "type": "character",
+      "name": "Mom",
+      "file": "mom_sheet_v2.png",
+      "version": 2,
+      "status": "approved",
+      "description": "Mom character sheet. Signature look: red polka dot apron, round glasses.",
+      "canonical_features": [
+        "red polka dot apron",
+        "round glasses"
+      ],
+      "prompt_usage": "Attach mom_sheet_v2.png as the character reference. In prompt text, refer to her as 'the mom (@mom, as shown in reference)'. Do not restate wardrobe details unless a scene changes them — the sheet defines them.",
+      "history": [
+        { "version": 2, "file": "mom_sheet_v2.png", "status": "approved", "date": "2026-07-19", "note": "Approved final. v1 superseded." }
+      ]
+    },
+    {
+      "id": "kitchen",
+      "tag": "@kitchen",
+      "type": "location",
+      "name": "Kitchen",
+      "file": "kitchen_v1.png",
+      "version": 1,
+      "status": "approved",
+      "description": "Primary kitchen location where the pancake action takes place.",
+      "canonical_features": [],
+      "prompt_usage": "Attach kitchen_v1.png as the environment/set reference. In prompt text: 'in the kitchen (@kitchen, as shown in reference)'. Keep camera and layout consistent with the reference image.",
+      "history": [
+        { "version": 1, "file": "kitchen_v1.png", "status": "approved", "date": "2026-07-19", "note": "Approved final." }
+      ]
+    },
+    {
+      "id": "pan",
+      "tag": "@pan",
+      "type": "prop",
+      "name": "Frying Pan",
+      "file": "pan_v3_arrow.png",
+      "version": 3,
+      "status": "approved",
+      "description": "Frying pan prop sheet. Includes a red arrow annotation pointing at the handle grip (marks the exact grip point for hand interactions).",
+      "canonical_features": [
+        "annotation: red arrow marks the handle grip point (annotation only — must NOT appear in rendered video)"
+      ],
+      "prompt_usage": "Attach pan_v3_arrow.png as the prop reference. When a character grabs or holds the pan, specify: 'grips the pan at the point indicated by the red arrow in the reference'. Always add that the arrow is an annotation and must not appear in the output.",
+      "history": [
+        { "version": 3, "file": "pan_v3_arrow.png", "status": "approved", "date": "2026-07-19", "note": "Approved final. Red arrow grip annotation added in this version." }
+      ]
+    }
+  ]
+}

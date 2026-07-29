@@ -1,0 +1,13 @@
+{
+  "eval_id": 1,
+  "eval_name": "prop-with-interaction",
+  "skill": "asset-prop",
+  "prompt": "For my AI video I need a prop reference: a chunky 90s TV remote with lots of buttons. In one shot the grandma has to press the big power button on it specifically, so that needs to be super clear. Write me the image generation prompt for this prop asset.",
+  "assertions": [
+    "The prompt explicitly specifies a gray / neutral-gray background",
+    "The prompt requests 3 or more views of the remote on one sheet (e.g., front, back, side, three-quarter)",
+    "The prompt includes physical-volume cues: cast shadows AND studio reflections (or equivalent surface-realism language)",
+    "A literal red arrow marking the power button is included — either prompted into the sheet or as an explicit edit-pass instruction",
+    "QA guidance includes rejecting flat / 2D-looking results"
+  ]
+}

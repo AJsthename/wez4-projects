@@ -1,0 +1,52 @@
+{
+  "expectations": [
+    {
+      "text": "The plan identifies Mom, the dog, the pancake, and the kitchen as recurring assets that need generated references",
+      "passed": true,
+      "evidence": "Breakdown table: 'Mom | Scenes 1, 5 | Yes — character sheet', 'The dog | Scenes 3, 5 | Yes — character sheet', 'The pancake | Scenes 1-5 | Yes — hero prop sheet', 'Kitchen | Scenes 1, 2 (window), 5 | Yes — location reference'."
+    },
+    {
+      "text": "The pigeon flock is flagged as a group needing multiple distinct variations (anti-clone rule)",
+      "passed": false,
+      "evidence": "Pigeons are skipped: 'Pigeons — generic flock behavior, single scene, models handle \"a flock of pigeons swarms in\" well without a reference.' No group-variation treatment anywhere."
+    },
+    {
+      "text": "Location decisions include explicit generate-vs-skip reasoning for at least one location (not every location blindly gets an asset)",
+      "passed": true,
+      "evidence": "'Sky/exterior of the house for Scene 2 — the pancake-sailing shot can be prompted from the street location reference' (skip with reasoning); performer's corner: 'generate it as part of this environment or as one extra angle, not a separate location.'"
+    },
+    {
+      "text": "A production order or prioritization is provided (recurring/blocking assets first)",
+      "passed": true,
+      "evidence": "Priority 0-3 structure plus 'Suggested generation order: 1. Style frame... 2. Mom → Dog → Pancake... 3. Kitchen → Street/bakery... 4. Street performer + hat (lighter pass)'."
+    },
+    {
+      "text": "The plan surfaces at least one open question or script ambiguity for the user to resolve before generation",
+      "passed": true,
+      "evidence": "Pancake sheet: 'Decide now whether it has butter/syrup on it' surfaces a script ambiguity for the user to settle before generation (with a recommendation); Scene 4 ambiguity is also flagged: 'If your Scene 4 is a single shot, you could skip him and describe inline.'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  },
+  "timing": {
+    "executor_duration_seconds": 52.0,
+    "total_duration_seconds": 52.0
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The plan surfaces at least one open question or script ambiguity for the user to resolve before generation",
+        "reason": "This passed on embedded decision-point remarks ('Decide now whether it has butter/syrup on it') rather than a dedicated open-questions section. If the skill's differentiator is an explicit questions-for-the-user step, tighten the assertion (e.g., require questions posed without the plan answering them itself)."
+      },
+      {
+        "assertion": "The pigeon flock is flagged as a group needing multiple distinct variations (anti-clone rule)",
+        "reason": "Failed on both configurations, including with the skill — see with_skill grading; the assertion may not reflect the skill's actual guidance for generic real-world swarms."
+      }
+    ],
+    "overall": "Baseline nearly matches the skill on this eval (4/5 vs 4/5); the assertion set may need sharper checks on the skill's unique planner behaviors (sheet-type specs, dependency reasoning)."
+  }
+}

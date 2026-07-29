@@ -1,0 +1,48 @@
+{
+  "expectations": [
+    {
+      "text": "The plan identifies Mom, the dog, the pancake, and the kitchen as recurring assets that need generated references",
+      "passed": true,
+      "evidence": "Characters table: Mom (scenes 1,5, three-view) and Dog (scenes 3,5, three-view); Props: 'Pancake | 1,2,3,4,5 | four-view | THE hero prop'; Locations: 'Kitchen | 1,2,5 | GENERATE — 3/4 angle | the anchor set'."
+    },
+    {
+      "text": "The pigeon flock is flagged as a group needing multiple distinct variations (anti-clone rule)",
+      "passed": false,
+      "evidence": "Pigeons are explicitly skipped instead: 'Pigeons | 4 | SKIP — describe in video prompt | generic real-world birds; video models render pigeon flocks natively. A swarm doesn't need individual continuity.' No group-variation sheet is planned."
+    },
+    {
+      "text": "Location decisions include explicit generate-vs-skip reasoning for at least one location (not every location blindly gets an asset)",
+      "passed": true,
+      "evidence": "'House exterior | 2,3 | SKIP — describe in video prompt | seen only briefly... Generic suburban house... Reversible: generate later if the window-exit shot needs precise geography'; Kitchen and street each get explicit GENERATE rationale."
+    },
+    {
+      "text": "A production order or prioritization is provided (recurring/blocking assets first)",
+      "passed": true,
+      "evidence": "'Production order' section: '1. Pancake — blocks all 5 scenes... 2. Mom — blocks the opening and closing scenes... 3. Dog... 4. Kitchen... 5. Suburban street... 6. Street performer', plus dependency notes."
+    },
+    {
+      "text": "The plan surfaces at least one open question or script ambiguity for the user to resolve before generation",
+      "passed": true,
+      "evidence": "'Open questions' section with six items, e.g. 'Animation style? ...This decision comes before any sheet', 'Kitchen geography: are the open window and the door on camera-compatible walls?', 'Street performer type: musician, mime, juggler?'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  },
+  "timing": {
+    "executor_duration_seconds": 71.2,
+    "total_duration_seconds": 71.2
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The pigeon flock is flagged as a group needing multiple distinct variations (anti-clone rule)",
+        "reason": "The WITH-SKILL run also failed this, skipping pigeons with a defensible rationale ('generic real-world birds... a swarm doesn't need individual continuity'). Either the skill's anti-clone rule intentionally excludes generic real-world animals — in which case this assertion contradicts the skill and should be revised — or the skill text needs to state that groups of any kind get a variation sheet. As written, the assertion penalizes the skill's own reasoning."
+      }
+    ],
+    "overall": "Four assertions are solid; the pigeon assertion conflicts with the skill's apparent design and failed on both configurations — review whether it tests intended behavior."
+  }
+}

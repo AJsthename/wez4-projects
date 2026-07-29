@@ -1,0 +1,12 @@
+{
+  "eval_id": 2,
+  "eval_name": "location-generate-vs-skip",
+  "skill": "asset-location",
+  "prompt": "I need location assets for my video: 1) Adel's messy bedroom where about half the scenes happen - bed under the window, desk covered in drawings, toys everywhere. 2) a generic sunny beach for one quick shot at the end. Write the image prompts.",
+  "assertions": [
+    "The bedroom prompt explicitly specifies a three-quarter (3/4) camera angle into the room showing two walls / depth of the space",
+    "The bedroom prompt describes the layout spatially — object positions relative to walls, window, and each other — not just an inventory list",
+    "The response recommends NOT generating an image asset for the beach, advising to describe it directly in the video prompt instead",
+    "The response includes physical-coherence QA guidance: reject plates with floating/unsupported/unattached objects and regenerate rather than fix"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "eval_id": 4,
+  "eval_name": "librarian-register-elements",
+  "skill": "asset-librarian",
+  "prompt": "I just finished generating and approving these assets for my project Pancake Run: the mom character sheet (saved it as mom_sheet_v2.png - she has a red polka dot apron and round glasses), the kitchen location (kitchen_v1.png), and the frying pan prop that has a red arrow pointing at the handle grip (pan_v3_arrow.png). Set up whatever asset tracking we need so my video prompts can cleanly reference these.",
+  "assertions": [
+    "A manifest/registry file is actually created on disk (not just described in the chat response)",
+    "Each of the three elements is assigned an @tag-style reference name (short, lowercase, prompt-ready)",
+    "All three asset filenames (mom_sheet_v2.png, kitchen_v1.png, pan_v3_arrow.png) are recorded with paths",
+    "Critical visible details are captured per element: red polka dot apron + round glasses for Mom, red arrow at the handle grip for the pan",
+    "Registered elements carry a status (e.g., final) distinguishing accepted assets from drafts"
+  ]
+}

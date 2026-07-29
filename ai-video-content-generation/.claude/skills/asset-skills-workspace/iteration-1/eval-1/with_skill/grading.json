@@ -1,0 +1,43 @@
+{
+  "expectations": [
+    {
+      "text": "The prompt explicitly specifies a gray / neutral-gray background",
+      "passed": true,
+      "evidence": "Prompt: 'on a solid mid-gray studio background'. QA also enforces: 'Background actually solid mid-gray? Scenery, textured surfaces, or gradient backdrops → reject.'"
+    },
+    {
+      "text": "The prompt requests 3 or more views of the remote on one sheet (e.g., front, back, side, three-quarter)",
+      "passed": true,
+      "evidence": "'Four views of the same remote, consistent across all views: [1] front view..., [2] back view showing the battery compartment cover, [3] side profile..., [4] three-quarter view...' on a single reference sheet."
+    },
+    {
+      "text": "The prompt includes physical-volume cues: cast shadows AND studio reflections (or equivalent surface-realism language)",
+      "passed": true,
+      "evidence": "'soft shadows grounding the object, subtle studio reflections on the plastic surfaces', reinforced by rationale: 'Volume cues prompted in (shadows, studio reflections, plastic texture, wear marks)'."
+    },
+    {
+      "text": "A literal red arrow marking the power button is included — either prompted into the sheet or as an explicit edit-pass instruction",
+      "passed": true,
+      "evidence": "'[4] three-quarter view with a bold red arrow pointing directly at the large round red power button', plus fallback: 'If the generator fights the arrow, generate the clean sheet first, accept it, then add the arrow in an edit pass.'"
+    },
+    {
+      "text": "QA guidance includes rejecting flat / 2D-looking results",
+      "passed": true,
+      "evidence": "'Volume test first: does it look like a real object photographed in a studio — visible thickness in the side view, shadows under it, soft reflections on the plastic? Flat/sticker-like → reject.'"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 34.6,
+    "total_duration_seconds": 34.6
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "Strong, discriminating assertion set — the baseline failed 4 of 5, all on mechanics the skill teaches."
+  }
+}

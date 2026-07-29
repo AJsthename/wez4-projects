@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "text": "The Adel prompt explicitly specifies a gray / neutral-gray background for the character sheet",
+      "passed": true,
+      "evidence": "Adel prompt opens with 'Character reference sheet on a solid mid-gray studio background, even soft lighting.' QA checklist also enforces it: 'Background actually solid mid-gray?'"
+    },
+    {
+      "text": "The Adel prompt requests multiple views on one sheet, including a clear face close-up AND a full-body view showing the outfit",
+      "passed": true,
+      "evidence": "One sheet with 'Three views of the same character': '[1] front-facing close-up portrait of the face, [2] full-body front view showing the complete outfit, [3] full-body three-quarter back view'."
+    },
+    {
+      "text": "The goblin prompt requests 3 or more distinct variations of the goblin type (different builds/heights/gear) rather than a single goblin",
+      "passed": true,
+      "evidence": "'Four distinct variations of a goblin minion standing side by side... each differing in height, build, ear shape, posture, and gear wear' with four enumerated builds ([1] short pot-bellied ... [4] scrawny runt)."
+    },
+    {
+      "text": "The response includes accept/reject QA criteria for evaluating the generated sheets (e.g., cross-view consistency, face clarity)",
+      "passed": true,
+      "evidence": "Two 'QA checklist — accept or reject' sections, e.g. 'Same girl in every view? Face shape, curl pattern... must match across all three views. Any drift → reject' and 'Face view clear and large? ... if it's small, soft, or shadowed → reject.'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 43.0,
+    "total_duration_seconds": 43.0
+  },
+  "eval_feedback": {
+    "suggestions": [],
+    "overall": "Assertions are discriminating for this skill's core mechanics (gray background, view layout, group variation, QA gates). No suggestions."
+  }
+}
