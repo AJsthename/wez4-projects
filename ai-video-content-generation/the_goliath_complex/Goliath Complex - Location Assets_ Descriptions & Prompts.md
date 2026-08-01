@@ -8,7 +8,13 @@
 **Three views per location, one anchor.** Every location is oriented around a single fixed **Anchor** — an unmistakable landmark (a throne, a stream, a doorway, a drop-off) that tells you which way you're facing. Each generated plate ships up to three views, all built around that anchor:
 - **A. Three-Quarter — Front View** — eye-level, diagonal, facing the anchor from the front (the original primary reference; two walls/slopes + depth).
 - **B. Three-Quarter — Back View** — the **180° reverse of A** (the shot/reverse-shot plate). Same location, same anchor, camera on the opposite side. **Left/right of every fixed object swaps, and the light source keeps its world position — so a sun that is high-left in A reads high-right in B.** Not every location has a meaningful reverse (the master panorama does not — see §1).
+
+  **The solid-anchor rule — how B is written depends on what the anchor is.** There are two kinds of reverse, and confusing them is what makes a back view come back as a flipped copy of the front:
+  - **Enclosing anchors** (a tent interior, a lab, a valley basin, an open plain — spaces the camera stands *inside*): turning 180° genuinely swaps left and right, because you are seeing the *same* surfaces from the other end. Writing "the table now on the left, mirrored from the front view" is correct here. §§1–2, 4, 7 work this way.
+  - **Solid anchors** (a house, a statue, a vehicle, a wall — objects the camera stands *outside* and looks *at*): crossing to the other side does **not** mirror anything. It reveals a **surface the front view never showed**, and no reference image contains it. The model has nothing to copy, so if the prompt says "reverse" or "mirrored" it will simply flip the front façade and hand back a juxtaposition. Write these plates by (1) describing the camera's position in **world terms** (up-slope / behind / on the far bank) instead of "180°", (2) **describing the hidden face from scratch** — what is actually on that wall, since it is new content, and (3) **stating positively where the front-side features have gone** ("the arched doorway and the table are on the far side, hidden behind the building") so the model places them rather than re-drawing them. Restrict the reference `@tag` to identity — construction, materials, proportions, landscape — and say so in the prompt. §6 (Jesse's homestead) works this way.
 - **C. CCTV Top-Down View** — an overhead **top-down view**: the camera looks straight/steeply *down* on the space from directly above, so you see the tops of everything (the crowns of heads, if anyone were there) and the *full* floor/ground layout reads as a map. **"CCTV" here names a camera *position*, not a prop** — it must **never** put a surveillance camera, mast, pole, ceiling mount, or lens *in the frame*; there is no camera visible in the shot, only the view from above. Clean photorealistic plate — no timestamp, no grain/monochrome, no on-screen text.
+
+  **Reference both A and B when they exist.** The two eye-level plates between them hold the site's full inventory — objects visible only from the front, objects visible only from behind — and a map view has to contain all of it. But note the trade: **two eye-level references pull twice as hard toward eye-level**, and a tilted high-angle is the usual failure. Pay for the extra references by strengthening the geometry language — state the overhead vantage absolutely ("the roof reads as a flat shape seen face-on, walls showing only as thickness at the roof edge"), fix a map orientation ("hillside rising toward the top of frame"), and **describe the roof/ground surface from scratch**, since no eye-level plate shows it.
 
 The anchor is restated in every view, carried into the Seedance shot prompts (rulebook §6 / tip #14, anchor objects), and recorded in the manifest's Critical details so reverse cuts never flip the geometry. All views of a location share the **same geography, layout, and world light** (only the *screen-direction* of that light flips between front and back, as noted).
 
@@ -345,31 +351,56 @@ Soft warm early-morning sun from low right, long gentle shadows, clear sky. Colo
 Every structure grounded, walls and table physically supported, roof beams sensible.
 ```
 ### Image-Generation Prompt — B. Three-Quarter — Back View
+> **Reference:** upload `@jesse_house_3qf` (the accepted Front View) with this prompt. It supplies the *building's identity* — construction, materials, proportions, roofline, hillside — not the camera geometry. The prompt deliberately avoids the words "reverse", "180°" and "mirrored": the house is a **solid anchor**, so crossing to its other side reveals a wall the Front View never saw. See the [Solid-anchor rule](#three-views-per-location-one-anchor) in the header.
+
 ```
 Exterior plate of an ancient Near-Eastern hillside homestead, empty of people, warm morning light,
-photorealistic — the 180° reverse of the front view, camera up-slope beside the house looking back down the
-hillside, three-quarter angle showing the house and the slope falling away.
-Layout: the sand-coloured stone-and-mud-brick house with its flat roof and arched doorway now in the near
-foreground (seen from its yard side, the sturdy wooden table still against the wall); the open packed-earth
-yard with low stone walls and an animal pen beside it; the grassy pasture slope with sparse olive trees now
-descending away from the house into the distance, toward far hills and the valley beyond.
-Soft warm early-morning sun now from low left (camera turned 180° from the front view), long gentle shadows,
-clear sky. Colour balanced 60-30-10 — 60% dominant green pasture and warm sand-stone, 30% ochre packed-earth and roof/wall tones, 10% terracotta accent (a jar or a folded textile at the table). Every structure grounded, walls and table physically supported,
-roof beams sensible.
+photorealistic. Camera stands on the higher ground behind the house, on the up-slope side, at a
+three-quarter angle looking down past the building toward the far hills.
+@jesse_house_3qf sets the building itself — its sand-coloured stone-and-mud-brick construction, its
+proportions, its flat roof and the green hillside it stands on. This plate shows the opposite face of that
+same building: the wall that faces up-slope, which @jesse_house_3qf never shows.
+Layout: the house fills the near foreground, presented on its rear, up-slope wall — a plain sand-coloured
+stone-and-mud-brick face carrying two small high square window openings and projecting wooden roof beams
+along the top edge, a narrow exterior stone stair climbing the wall to the flat roof, tall clay storage jars
+and a stack of cut firewood set against the base of the wall. The arched doorway, the packed-earth yard and
+the wooden provisions table are on the far side of the house, standing hidden behind the building. The low
+stone-walled animal pen shows at the house's left flank, its posts and rails seen from behind. Past the
+house the grassy pasture slope falls away with sparse olive trees, running down to far hills and the valley
+beyond.
+Soft warm early-morning sun low on the left, long shadows of the house and trees stretching down-slope to
+the right, clear sky. Colour balanced 60-30-10 — 60% dominant green pasture and warm sand-stone, 30% ochre
+packed-earth and roof/wall tones, 10% terracotta accent (the clay storage jars at the wall). Every structure
+grounded, walls, stair and pen physically supported, roof beams sensible.
 ```
 ### Image-Generation Prompt — C. CCTV Top-Down View
+> **References:** upload **both** `@jesse_house_3qf` (Front View) and `@jesse_house_3qb` (Back View). Between them they cover the site's full inventory — the yard and provisions table exist only in the front plate, the animal pen, roof stair, jars and firewood only in the back one — and a map view has to contain all of it. **The guardrail:** both references are eye-level, so they pull hard toward eye-level. The overhead vantage is stated in absolute terms below, and the roof surface is described from scratch, because neither reference shows it. Same principle as the [solid-anchor rule](#three-views-per-location-one-anchor): references carry identity, the text carries geometry.
+
 ```
 High overhead top-down view of an ancient Near-Eastern hillside homestead, empty of people, warm morning
 light, photorealistic clean plate, no on-screen text.
-Vantage: looking straight down on the house, yard and slope from directly above, so the whole layout reads
-like a map — the flat roof, the yard and the table all seen from overhead. No camera, pole, or equipment
-anywhere in frame.
-Layout: a large sand-coloured stone-and-mud-brick house with a flat roof and an arched doorway on a gentle
-green hillside; an open packed-earth yard in front with a sturdy wooden table against the house wall; low
-stone walls and an animal pen to one side; a grassy pasture slope dotted with sparse olive trees, descending
-toward distant hills.
-Soft warm early-morning sun from low right, long gentle shadows, clear sky. Colour balanced 60-30-10 — 60% dominant green pasture and warm sand-stone, 30% ochre packed-earth and roof/wall tones, 10% terracotta accent (a jar or a folded textile at the table).
-Every structure grounded, walls and table physically supported, roof beams sensible.
+@jesse_house_3qf and @jesse_house_3qb together supply what stands on this site and what it is built from —
+the sand-coloured stone-and-mud-brick construction, the building's proportions and footprint, the yard and
+its provisions table, the animal pen, the roof stair, the storage jars and the firewood. This plate is a
+third vantage neither of them shows: the camera hangs directly above the homestead, lens pointing straight
+down at the ground.
+Vantage: a true overhead map view — the house reads as a flat rectangular roof seen face-on from above, the
+ground around it lying flat across the frame, the walls showing only as their thickness at the roof edge
+and the shadows they cast. No camera, mast, pole, or equipment anywhere in frame.
+Layout, read as a plan with the hillside rising toward the top of frame and falling away toward the bottom:
+the house sits in the upper middle, its flat mud-plaster roof edged by a low parapet, the ends of the wooden
+roof beams projecting past the wall line, a woven drying mat and a few shallow baskets of grain set out on
+the roof surface, the top landing of the exterior stone stair arriving at the roof's up-slope edge; on the
+roof's down-slope side the arched doorway reads as a break in the wall footprint with its threshold below,
+opening onto the open packed-earth yard, where the sturdy wooden provisions table stands against the house
+wall with terracotta storage jars beside it; the low stone-walled animal pen adjoins the house's left flank,
+its enclosure open to the sky; low stone walls edge the yard; below and around it the grassy pasture slope,
+dotted with sparse olive trees, runs down toward far hills at the bottom of frame.
+Soft warm early-morning sun low from the right of frame, long shadows of the house, the pen walls and the
+olive trees all stretching left across the ground, clear sky. Colour balanced 60-30-10 — 60% dominant green
+pasture and warm sand-stone, 30% ochre packed-earth and roof/wall tones, 10% terracotta accent (the storage
+jars at the table and the wall). Every structure grounded, walls, stair and pen physically supported, roof
+beams sensible.
 ```
 ### QA Checklist
 - [ ] House + **yard with a table against the wall** + a **pasture slope** below (the Clip 22–26 staging)
@@ -377,6 +408,11 @@ Every structure grounded, walls and table physically supported, roof beams sensi
 - [ ] Period-accurate stone/mud-brick build, flat roof, arched door — no modern materials
 - [ ] Morning light direction consistent; pastoral green vs the arid valley elsewhere
 - [ ] No people, no sheep-as-characters (sheep added per shot); nothing floating
+- [ ] **Back View is a genuinely different wall, not a flipped façade** (solid-anchor rule): the up-slope wall shows **no arched doorway and no provisions table** — those stay hidden on the far side — and it carries its own features (high window openings, the roof stair, jars and firewood at the base). A plate that returns the same façade with left/right swapped is a mirror, not a reverse → **discard**
+- [ ] Back View keeps the **same house** as `@jesse_house_3qf` — matching stone colour, wall thickness, roof height and beam spacing — and the slope still falls away past it toward the far hills
+- [ ] **CCTV is a true top-down, not a high three-quarter** — the roof reads as a flat shape seen face-on and no wall *face* is visible, only wall thickness at the roof edge. With two eye-level references attached, a tilted high-angle is the likely failure → **discard**
+- [ ] CCTV carries the **full inventory from both plates**: roof surface (parapet, beam ends, drying mat, stair landing), yard + provisions table, animal pen, storage jars, olive-dotted pasture — nothing that exists in A or B has gone missing on the map
+- [ ] All three plates agree on **one world sun**: low-right in A, low-left in B, and from the right of frame in C with shadows falling left (up-slope at the top of frame)
 
 ---
 
