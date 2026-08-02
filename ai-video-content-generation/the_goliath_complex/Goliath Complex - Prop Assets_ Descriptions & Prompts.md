@@ -161,24 +161,27 @@ Clean sheet layout, no text labels, no hands, no scenery.
 
 ## 6. King Saul's Royal Armor Set — `@saul_armor`
 
-**Description:** Saul's personal battle gear — bronze/chain breastplate, royal helmet, and sword — that Saul puts on David (Clips 79–80). It is **sized for a broad 185 cm king**, so on 158 cm David it visibly *swallows* him: helmet slips over his eyes, the hem hangs past his shins, the sword is nearly his own height. This is a distinct handled prop, separate from Saul's worn costume on his character sheet.
+**Description:** Saul's personal battle gear — a blackened dark-steel plate breastplate, close helm, and sword — that Saul puts on David (Clips 79–80). It is **sized for a broad 185 cm king**, so on 158 cm David it visibly *swallows* him: helmet slips over his eyes, the hem hangs past his shins, the sword is nearly his own height. This is a distinct handled prop, separate from Saul's worn costume on his character sheet.
 
 ### Image-Generation Prompt
 ```
-Product-style reference sheet of a king's ancient royal armor set on a solid mid-gray studio background,
+Product-style reference sheet of a king's royal battle armor set on a solid mid-gray studio background,
 even soft studio lighting, soft grounding shadows, subtle metallic reflections.
-Four views of the set, consistent across views: [1] the chain-and-scale breastplate front, [2] the
-breastplate back, [3] the royal helmet three-quarter, [4] the royal sword in its scabbard.
-Objects: a large ornate Israelite king's armor — a heavy bronze scale-and-chain breastplate with engraved
-royal motifs and leather straps, a domed bronze helmet with a nasal guard and a modest crest, and a fine
-straight sword with a gilded crossguard in a tooled leather scabbard. Regal, polished, clearly sized for
-a very tall broad-shouldered man. Well-kept, high-status metalwork.
+Four views of the same set, consistent across views: [1] the full suit front, [2] the breastplate from the
+back, [3] the close helm three-quarter, [4] the royal sword in its scabbard.
+Objects: an ornate king's battle armor — a full suit of blackened dark-steel plate with an aged patina: a
+rounded close helm with a horizontal visor slit and breathing slits and a polished gold band running down the
+centre of the face; a rounded breastplate bearing a large ornate embossed gold roundel at its centre; layered
+articulated pauldrons and arm plates; a fauld of dark-steel lames over a mail skirt reaching mid-thigh; and a
+straight sword with a gold cruciform hilt in a dark scabbard. Regal, high-status metalwork, clearly sized for
+a very tall broad-shouldered man.
 Clean sheet layout, no text labels, no hands, no scenery.
 ```
 ### QA Checklist
 - [ ] Reads **large and regal** — a tall king's gear, so it will visibly swallow a slight youth
-- [ ] Breastplate front/back consistent; helmet and sword match the set's metal and style
-- [ ] Metal scale/chain texture, engraving, and volume all present (not flat)
+- [ ] **Blackened dark-steel plate** with an aged patina; helm, breastplate and sword share the same metal and style
+- [ ] Key **gold accents** present: the helm's face-band, the large embossed breastplate roundel, the sword's cruciform hilt
+- [ ] Close helm (visor + breathing slits), layered pauldrons, and a fauld over a **mail skirt** all present (not flat)
 - [ ] Higher-status than ordinary soldier armor (this is the comic contrast)
 - [ ] Background solid mid-gray
 > **Scale gag (Clip 80):** in the shot state "the armor is sized for King Saul (a tall broad man) and swallows David — helmet slips over his eyes, hem past his shins, sword nearly his own height."

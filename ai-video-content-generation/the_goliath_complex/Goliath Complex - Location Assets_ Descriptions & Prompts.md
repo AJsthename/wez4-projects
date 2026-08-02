@@ -208,6 +208,8 @@ Every tent staked and grounded, racks and poles physically supported.
 
 **Anchor:** the **raised carpeted dais with the carved wooden throne-seat** (against the far-left wall in the front view) — the fixed focal point; the **entrance flap in the far wall** is the fixed daylight source that the light logic keys off.
 
+**Armor:** the armor on the stand is the **`@saul_armor`** prop — its exact design (blackened dark-steel plate, gold-roundel breastplate, gold-band close helm, gold-hilted sword) lives in the Prop Assets file. Keep the plate's armor consistent with that sheet rather than re-detailing it here; the location plate only needs the stand present as set dressing.
+
 ### Image-Generation Prompt — A. Three-Quarter — Front View
 ```
 Interior plate of a large ancient royal military command tent, empty of people, camera at a three-quarter
@@ -216,9 +218,7 @@ photorealistic.
 Layout: against the far-left wall a raised stepped dais carpeted with layered rugs holding a carved dark-wood
 throne with a deep-red seat, backed by a deep-red gold-embroidered wall hanging and tied-back red curtains; in
 the centre of the far wall a partly open entrance flap with tied-back canvas curtains, letting in bright
-daylight and a glimpse of green valley hills beyond; right of centre near the entrance a wooden armor stand
-displaying the king's armor — a dark steel breastplate with a large round embossed gold medallion, a closed
-helmet topped with a golden royal crown, a tall spear held upright at its side and a sheathed sword at the hip;
+daylight and a glimpse of green valley hills beyond; right of centre near the entrance a wooden armor stand displaying the king's armor;
 against the right side a sturdy wooden map/campaign table with a spread hide map and coloured cone markers; at
 the centre of the tent a large patterned carpet spread over the packed earth — a deep-red royal rug matching
 the dais rugs — covering the middle of the floor; further woven rugs layered over a packed-earth and pale-stone
@@ -227,7 +227,7 @@ brass lantern on a stand at the right.
 Bright daylight from the open entrance flap (far wall) plus warm lamp glow from the lanterns; goat-hair canvas
 walls and roof, colour balanced 60-30-10 — 60% dominant sandy goat-hair canvas neutral, 30% deep-red royal
 textiles (dais rugs, wall hanging and curtains), 10% brass-and-gold accent (the lantern flames, the armor's
-round medallion and the king's crown). Every object grounded — throne on the dais, table legs and armor stand
+gold trim). Every object grounded — throne on the dais, table legs and armor stand
 on the floor, lanterns on their stands, the central carpet lying flat on the floor.
 ```
 ### Image-Generation Prompt — B. Three-Quarter — Back View
@@ -237,9 +237,7 @@ eye-level, photorealistic — the 180° reverse of the front view, camera near t
 back across the tent toward its rear, showing two canvas walls and the peaked canvas roof over wooden ridge beams.
 Layout: the raised stepped dais with its carved dark-wood throne, deep-red gold-embroidered wall hanging and
 tied-back red curtains now in the near foreground on the right (mirrored from the front view); the king's armor
-stand — a dark steel breastplate with a large round embossed gold medallion, a closed helmet topped with a
-golden royal crown, a tall spear upright at its side and a sheathed sword at the hip — now standing left of
-centre; the sturdy wooden map/campaign table with its spread hide map and coloured cone markers now against the
+on its wooden stand now standing left of centre; the sturdy wooden map/campaign table with its spread hide map and coloured cone markers now against the
 left side; at the centre of the tent a large patterned carpet spread over the packed earth — a deep-red royal
 rug matching the dais rugs — covering the middle of the floor; further woven rugs layered over a packed-earth
 and pale-stone flagstone floor around the edges; the rear canvas wall closing the space ahead;
@@ -247,7 +245,7 @@ tall wrought-iron cage lantern stands and a warm brass lantern on a stand around
 Daylight spills from the open entrance flap behind the camera as soft backlight, warm lamp glow filling the
 rear of the tent; goat-hair canvas walls and roof, colour balanced 60-30-10 — 60% dominant sandy goat-hair
 canvas neutral, 30% deep-red royal textiles (dais rugs, the central carpet, wall hanging and curtains), 10% brass-and-gold accent
-(the lantern flames, the armor's round medallion and the king's crown). Every object grounded — throne on the
+(the lantern flames, the armor's gold trim). Every object grounded — throne on the
 dais, table legs and armor stand on the floor, lanterns on their stands, the central carpet lying flat on the floor.
 ```
 ### Image-Generation Prompt — C. CCTV Top-Down View
@@ -259,23 +257,21 @@ layout reads like a map — the throne, dais, table, armor stand and the large c
 overhead. No camera or equipment anywhere in frame.
 Layout: against the far-left wall a raised stepped dais carpeted with layered rugs holding a carved dark-wood
 throne backed by a deep-red gold-embroidered wall hanging; in the centre of the far wall a partly open entrance
-flap; right of centre near the entrance a wooden armor stand displaying the king's armor — a dark steel
-breastplate with a round embossed gold medallion, a helmet topped with a golden royal crown, an upright spear
-and a sheathed sword; against the right side a sturdy wooden map/campaign table with a spread hide map and
+flap; right of centre near the entrance a wooden armor stand displaying the king's armor; against the right side a sturdy wooden map/campaign table with a spread hide map and
 coloured cone markers; at the centre of the tent a large patterned carpet spread over the packed earth — a
 deep-red royal rug matching the dais rugs — covering the middle of the floor; further woven rugs layered over a
 packed-earth and pale-stone flagstone floor around the edges; tall wrought-iron cage lantern stands and a warm
 brass lantern on a stand.
 Warm daylight from the open flap plus soft warm lamp glow; goat-hair canvas walls, colour balanced 60-30-10 —
 60% dominant sandy goat-hair canvas neutral, 30% deep-red royal textiles (dais rugs, the central carpet, wall hanging and curtains),
-10% brass-and-gold accent (the lantern flames, the armor's round medallion and the king's crown). Every object
+10% brass-and-gold accent (the lantern flames, the armor's gold trim). Every object
 grounded — table legs and armor stand on the floor, lamps on stands, the central carpet lying flat on the floor.
 ```
 ### QA Checklist
 - [ ] **3/4 angle** — two canvas walls + real depth (not a flat tent wall)
 - [ ] **Table to the right side**, **armor stand right of centre near the entrance** — furniture kept off the middle of the floor
 - [ ] **A large deep-red patterned carpet covers the centre of the floor** (matching the dais rugs) — the bare earth in the middle is covered, not left empty
-- [ ] The **armor stand shows the king's crowned armor** — dark steel breastplate with a **large round gold medallion**, closed helmet topped with a **golden crown**, upright spear, sheathed sword (sets up the Clip 79–80 gag)
+- [ ] The **armor stand is present and grounded** (its exact design is the **`@saul_armor`** prop sheet — keep them consistent; sets up the Clip 79–80 gag)
 - [ ] Scenery matches the loved take: **packed-earth/pale-stone flagstone floor** under layered rugs, **tall wrought-iron cage lanterns** + a **warm brass lantern** at the right, deep-red gold-embroidered dais hanging (not a plank floor)
 - [ ] Open flap shows a sliver of daylight/valley (spatial logic to the outside)
 - [ ] Lighting: daylight from the flap + lamp glow agree in direction
@@ -481,7 +477,7 @@ readable text. Every device cabled and grounded, monitors on mounts, nothing flo
 
 ## Handoff & open questions
 
-- **Register** each accepted plate via the **asset-librarian** skill (create `assets/MANIFEST.md` on first registration). Note continuity-critical layout facts in Critical details (e.g. "armor stand on the right wall" for `@saul_tent`, "valley visible below" for `@ann_peak`).
+- **Register** each accepted plate via the **asset-librarian** skill (create `assets/MANIFEST.md` on first registration). Note continuity-critical layout facts in Critical details (e.g. "armor stand right of centre near the entrance" for `@saul_tent`, "valley visible below" for `@ann_peak`).
 - **Continuity anchors:** `@valley_elah`, `@elah_plain`, `@israel_camp`, and `@ann_peak` must all agree on the same two-mountain geography and sun direction — generate the master `@valley_elah` first and match the others to it.
 - **Assumptions flagged (change if wrong):** (1) `@ann_peak` is a light plate — could be folded into a per-shot description if you'd rather not lock it; (2) the dig site is treated as SKIP despite the script/production note conflict (script says "desert"/sand, production list says "Antarctica") — **flag which you want** if that flashback grows beyond one shot; (3) the stream is folded into the valley plates rather than its own asset.
 - **Next:** promote clips to Seedance prompts once character, location, and prop sheets are finalised and registered (see the [Scene & Clip Breakdown](script_&_scenes/Goliath_Complex_Scene_&_Clip_Breakdown.md)).

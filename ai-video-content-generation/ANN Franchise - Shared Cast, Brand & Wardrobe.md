@@ -47,16 +47,23 @@ Recurring on-screen crew. Heights are ×base (base = average man ~160 cm) from t
 
 | Element | Tag | File | Scale | Critical details | Status |
 |---------|-----|------|-------|------------------|--------|
-| Chris | `@chris` | — | 1.10× base | **young reporter, mid-to-late 20s (max ~30)**; caucasian; modern attire, carries `@ann_tablet` and wears `@ann_watch` (the two-hour clock); wears `@ann_jacket` | draft |
-| Clarissa | `@clarissa` | — | 1.09× base | **young reporter, mid-to-late 20s (max ~30)**; african, ebony; distinctive hair; modern reporter attire, tablet; wears `@ann_jacket` | draft |
-| Mr Tec Nical | `@tec_nical` | — | 1.12× base | east-asian/indian, moderately bulky; cameraman — `@ann_camera`, worn headcam + backpack; wears `@ann_jacket` | draft |
-| Professor Phro Nesis | `@phro_nesis` | — | 1.09× base | caucasian; lab coat, scientist (lab team) | draft |
-| Doctor Sue Nesis | `@sue_nesis` | — | 1.00× base | east-asian; lab coat, scientist (lab team) | draft |
-| Mr Kata Lambano | `@kata_lambano` | — | 1.11× base | bangladeshi; professional attire (lab team) | draft |
-| ANN team (background ensemble) | `@ann_team` | — | variable (~×1.0–1.12) | background ANN crowd palette — 4 distinct modern staff, varied gender/ethnicity/age/build/hair; ANN brand (graphite + teal #2596be, small ANN badge and/or lanyard); role mix (crew jacket / lab coat / utility gilet / coordinator); no clones, none duplicating a named principal's signature | draft |
+| Chris | `@chris` | — not filed | 1.10× base | **young reporter, mid-to-late 20s (max ~30)**; caucasian; modern attire, carries `@ann_tablet` and wears `@ann_watch` (the two-hour clock); wears `@ann_jacket` | final |
+| Clarissa | `@clarissa` | — not filed | 1.09× base | **young reporter, mid-to-late 20s (max ~30)**; african, ebony; distinctive hair; modern reporter attire, tablet; wears `@ann_jacket` | final |
+| Mr Tec Nical | `@tec_nical` | — not filed | 1.12× base | east-asian/indian, moderately bulky; cameraman — `@ann_camera`, worn headcam + backpack; wears `@ann_jacket` | final |
+| Professor Phro Nesis | `@phro_nesis` | — not filed | 1.09× base | caucasian; lab coat, scientist (lab team) | final |
+| Doctor Sue Nesis | `@sue_nesis` | — not filed | 1.00× base | east-asian; lab coat, scientist (lab team) | final |
+| Mr Kata Lambano | `@kata_lambano` | — not filed | 1.11× base | bangladeshi; professional attire (lab team) | final |
+| ANN team (background ensemble) | `@ann_team` | — not filed | variable (~×1.0–1.12) | background ANN crowd palette — 4 distinct modern staff, varied gender/ethnicity/age/build/hair; ANN brand (graphite + teal #2596be, small ANN badge and/or lanyard); role mix (crew jacket / lab coat / utility gilet / coordinator); no clones, none duplicating a named principal's signature | final |
 
 > **Narrator:** appears voice-only (no on-screen presence) — no sheet planned. Add a tag if ever seen on camera.
 > **Episode note:** the reporting trio (`@chris`, `@clarissa`, `@tec_nical`) is core to every episode; the lab team (`@phro_nesis`, `@sue_nesis`, `@kata_lambano`) may or may not appear per episode — the tag stays reserved either way.
+
+> ### Cast came before brand — deliberately. Read this before the franchise pass.
+> The registration order below has logos → jacket → cast, so every crew sheet would be generated *wearing the accepted* `@ann_jacket`. In practice the cast came first: all seven sheets are generated and `final` while the three logos and the jacket are still `draft`. **Crew wardrobe currently lives in each sheet's own prompt text**, which is enough to keep a single episode consistent, so the brand assets are consciously **deferred** rather than blocking.
+>
+> The one thing that inverts when the franchise pass happens: `@ann_jacket` can no longer *define* the wardrobe, because seven accepted sheets already show it. Build the jacket **to match those sheets** — read its real design off them, write that into Critical details, and generate to match. Defining a new jacket at that point would drift the wardrobe away from cast sheets that are already locked and in use.
+>
+> Also note **no crew sheet is filed in the repo yet** — the tags resolve only inside the generation platform. Export and file all seven.
 
 ---
 
