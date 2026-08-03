@@ -49,7 +49,7 @@ Five tags on the generated assets differ from what this index originally planned
 |---------|-----|-----------|----------------------------------------|--------|
 | David (shepherd) | `@david` | three-view | ~158 cm, youth via build/face not height; rosy, hazel eyes, sheepskin mantle | ✅ generated |
 | King Saul | `@saul` | three-view | 185 cm, head-and-shoulders above the people; greying beard, kingly-careworn | ✅ generated |
-| Goliath (Gulayat) | `@goliath` | four-panel (+ helmet inset) | 297 cm, ~2× shoulder width; bronze fish-scale armor, full dark beard | ✅ generated |
+| Goliath (Gulayat) | `@goliath` | four-panel (+ helmet inset) | 297 cm, ~2× shoulder width; bronze fish-scale armor, full dark beard. **Size-capped — prompt him with the [scale cage](crs_table_Goliath_Complex.md#the-scale-cage-bounding-a-giant), never with *colossal / monumental / towering*** | ✅ generated |
 | Goliath's shield-bearer | `@shield_bearer` | three-view | 165 cm, sturdy; dwarfed by Goliath; carries the tower shield | ✅ generated |
 | Jesse | `@jesse` | three-view | 164 cm, elderly dignified father, grey beard, robes | ✅ generated |
 | Eliab (eldest brother) | `@eliab` | three-view | 170 cm, tall soldierly proud bearing | ✅ generated |
@@ -108,7 +108,7 @@ Every location ships up to **three plates**, each its own tag and its own manife
 | Element | Tag | Note | Status |
 |---------|-----|------|--------|
 | Goliath's spear | `@goliath_spear` | shaft taller than Saul | ✅ generated |
-| Goliath's tower shield | `@goliath_shield` | carried by the shield-bearer | ✅ generated |
+| Goliath's tower shield | `@goliath_shield` | carried by the shield-bearer; **≈1.35× his height (ceiling 1.5×)** — his crown reaches only ~7/10 up the shield; sheet contains **no human figure**, strap empty | ⚠️ v1/v3 too small, v2 ~4–5× too large — **v4 pending; v3's design is the accepted look, size only changes** (tag unchanged) |
 | Goliath's sword | `@goliath_sword` | David draws it two-handed to behead him | ✅ generated |
 | David's shepherd's staff | `@david_staff` | ≈ David's own height | ✅ generated |
 | David's sling, pouch & 5 stones | `@david_sling_kit` | hero weapon; slow-mo stone | ✅ generated |

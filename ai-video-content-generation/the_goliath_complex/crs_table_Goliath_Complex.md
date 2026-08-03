@@ -11,7 +11,7 @@ Single source of truth for size across the whole pipeline (reference sheet → c
 | David | 158 cm | 0.99 | ~7.5 | reddish/rosy complexion, handsome, slight, wiry — **youth reads via build/face, not height** |
 | King Saul | 185 cm | 1.16 | ~8.3 | tall, broad-shouldered, kingly but careworn; full greying beard; head-and-shoulders above the people (1 Sam 9:2) |
 | Eliab | 170 cm | 1.06 | ~7.8 | eldest brother; tall, soldierly, proud impressive bearing (1 Sam 16:6) |
-| Goliath | 297 cm | 1.86 | ~8.5 + **~2× shoulder width** | colossal mass, heavy brow, thick dark beard, weathered; the giant reads through *mass*, not height alone |
+| Goliath | 297 cm | 1.86 | ~8.5 + **~2× shoulder width** | heavyweight mass, heavy brow, thick dark beard, weathered; the giant reads through *mass*, not height alone — and he is a huge **man**, capped at *a little under twice* a man's height (see the scale cage below) |
 | Goliath's Shield-bearer | 165 cm | 1.03 | ~7.6 | **sturdy and strong** (must bear the heavy tower shield) yet massively dwarfed by Goliath; loyal, watchful subordinate |
 | Philistine Soldiers | 160–165 cm | 1.00–1.03 | ~7.4–7.6 | foreign warrior gear, distinct from Israelites; vary faces/builds across the group |
 | Saul's Counsellors #1, #2, #3 | 157–162 cm | 0.98–1.01 | ~7.3–7.5 | older; robes over armor; rank indicators; three distinct faces/beards |
@@ -47,9 +47,97 @@ Camera-robust because each line states where two **bodies meet**, not a ratio (w
 - Saul's crown ≈ **Goliath's mid-chest** (~62%)
 - Saul stands ~**a head above** the average soldier ("head and shoulders above the people," 1 Sam 9:2)
 - Shield-bearer's crown ≈ **just above Goliath's waist** (script: "the shield bearer is slightly above his waist in height")
+- Goliath's **kneecap** ≈ the shield-bearer's **hip**; Goliath's hanging **elbow** ≈ just above the shield-bearer's **feather crest**
 - Goliath ~**2× the shoulder width** of any man — mass sells the giant more than height alone
+- **Ceiling:** Goliath stands *a little under twice* a man's height — two average men one on the other's shoulders would overtop him
 
 > **Guard — David's height (do not shrink him).** The script has Eliab sneer that David is "head and shoulders below us all" and call him a "pipsqueak." That is **in-character insult, not a scale directive.** David stays ~158 cm (≈ average soldier height); his youth reads through slight build, smooth face, and rosy complexion. Only Saul's "head and shoulders above" is literal. Don't let a prompt-writer copy Eliab's line into a size instruction.
+
+---
+
+## The scale cage — bounding a giant
+
+**Field-tested, Clip 3 (Scene 1).** A single landmark line is *not enough* for Goliath. Across three
+different video models the "shield-bearer's crown just above Goliath's waist" instruction held for
+about two seconds and then the model kept growing him — ending on a ~15 m titan whose calves the
+bearer no longer reached. A landmark on its own is a *floor* with no *ceiling*, so the model reads
+the surrounding superlatives as permission to escalate.
+
+**Two causes, both fixable in the prompt:**
+
+1. **Unbounded vocabulary.** *colossal, enormous mass, monumental scale, towering, earth-shaking,
+   ground tremor* are open-ended intensifiers. They do not describe a size, they describe "more",
+   and the model obliges — frame after frame. **Ban them from Goliath's prompt text.** He is "a
+   giant of a man built on human proportions, heavyweight-wrestler mass." Mass words are fine when
+   they describe *build*; they are poison when they describe *scale*.
+2. **God's-eye overheads in a scale shot.** A top-down destroys the shared ground line that the
+   whole comparison rests on, so the model re-guesses both figures' sizes from scratch on the new
+   angle. Use a **high three-quarter** that keeps both pairs of feet in frame instead.
+
+**The cage — state several body-meeting contacts plus an explicit ceiling.** One contact can be
+satisfied while the figure still inflates; four mutually-contradicting contacts cannot:
+
+- @shield_bearer's crown reaches just above Goliath's waist, **at his belt line**
+- Goliath's **kneecap** sits level with @shield_bearer's **hip** ← the line that directly forbids
+  the observed failure (bearer below the giant's calf)
+- With Goliath's arm hanging, his **elbow** rides just above @shield_bearer's **feather crest**
+- Goliath's shoulders ≈ **twice** @shield_bearer's shoulder width
+- **Ceiling:** "two men of @shield_bearer's height standing one on the other's shoulders would
+  overtop Goliath"; "both men fit whole inside the frame together on one visible ground line"
+
+**Anchor the multiple to a named figure in the shot, not to "a man."** "Twice a man's shoulder
+width" has no referent on screen; "twice @shield_bearer's shoulder width" does. When Goliath is
+alone in frame, use whatever *is* in frame as the yardstick — the nearest soldiers of
+`@philistine_army` (they reach about his waist), or his own planted `@goliath_spear` (head at about
+his shoulder). A solo shot with no yardstick has nothing holding his size at all.
+
+**Restate the cage three times per shot:** in FIRST FRAME / BLOCKING (full list), in ACTION at the
+reveal beat, and compressed in POSITIVE LOCKS — plus "the same size in the last frame as in the
+first."
+
+**Weight is relative, not seismic.** A ~297 cm man is heavy, not geological. "His steps are heavier
+and slower than the bearer's, a low puff of dust at each boot, the ground staying firm and still"
+delivers the dramatic weight; "earth-shaking footfalls / ground tremor" reads to the model as
+evidence he must be enormous, and it resizes him to justify the tremor. Same trap in AUDIO and in
+STYLE ("monumental scale").
+
+> **The cage applies to prop sheets too — and a prop needs its own ceiling.** `@goliath_shield`
+> v1 was specced "covers a grown man shin-to-shoulder" and generated at exactly that — a
+> *well-fitted* shield for the 165 cm bearer rather than one built for a 297 cm champion. The v2
+> re-spec then over-corrected to roughly **4–5× the man's height** — a gate, not a shield — because
+> it repeated the Clip 3 mistakes inside a prop prompt: *"enormous"*, *"built for a giant warrior"*,
+> *"with room to spare"*, a bare "taller than a man" floor with no maximum, and (worst) a *"**small**
+> grey silhouette"* for the yardstick, which invited the model to shrink the reference figure instead
+> of holding the prop's size.
+>
+> A giant's prop is described as **oversized for the person handling it, by a stated amount, with a
+> ceiling and a measurable landmark**: `@goliath_shield` = ≈1.35× the bearer's height (never past
+> 1.5×), lower rim at his ankles, top rim ~2.5 head-heights above his crown, **his crown reaching
+> only ~7/10 of the way up the shield**, width ≈ twice his shoulder span, aspect ≈ 2.5:1.
+>
+> **Two further traps, both learned on v3 of this same prop:**
+>
+> 1. **A size-class analogue is the strongest lever in a prop prompt — so a wrongly-chosen one is the
+>    most destructive thing in it.** v3's ratios were correct and internally consistent, and the model
+>    ignored all of them because the prompt also said *"the same size class as a Roman scutum or a
+>    Norman kite shield"* — two **man-fitted** shields. The concrete analogue beat every ratio line
+>    and the shield came back at ~0.85× the man. Check that the analogue actually sits in the target
+>    class before naming it (a door leaf does; a scutum does not), and drop function phrases that
+>    imply a comfortable fit ("a shield he could hold").
+> 2. **Never bake a yardstick figure into a referenceable sheet.** v3 put a grey silhouette in every
+>    view, which meant every video prompt attaching that sheet would be attaching a picture of a man —
+>    a direct bleed risk into the generation — and it consumed two of the four view slots, so the
+>    sheet delivered only three object views. **The referenceable sheet holds the object alone.**
+>    Carry absolute size through **internal proportion cues** instead — strap and grip sized to a
+>    normal forearm and spanning only ~⅓ of the width, boss ≈ ¼ of the width, a stated aspect ratio —
+>    which read as "built for someone far larger" with no person in frame. Prove the ratio in a
+>    **separate QA-only comparison image** that is checked once and never uploaded. Also state
+>    positively that straps and grips are **empty** — "no hands" as a negative produced a glove.
+>
+> The capped prop then doubles as a second yardstick for the giant; an *uncapped* prop is a second
+> thing to go wrong.
+
+---
 
 > **Recurring-cameo signatures.** The two funny soldiers (and any minor comic character) carry a **locked, memorable signature look** so the audience thinks "oh, it's that guy!" whenever they reappear across projects. Register those signatures in the manifest exactly like a lead's critical details so they stay identical everywhere.
 

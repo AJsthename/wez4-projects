@@ -12,6 +12,7 @@ Built with the **seedance-clean** skill. This file grows one scene-block at a ti
 - **Test pass 720p → final pass re-render the accepted prompt at 1080p/4K.** Same prompt, same uploads, same order — only the resolution setting changes.
 - **Reference by `@tag`.** Every `@tag` is a **`final`** asset in the registry. Attach the matching reference image per the UPLOAD ORDER table; the tags resolve in the generation platform. ⚠️ Most sheets are tagged-in-platform but **not yet filed in-repo** (see the manifest's archival-gap note) — export/file them before these prompts are leaned on heavily.
 - **Scale is landmark-based, never centimetres** — copy the landmark lines from the manifest Scale column into each shot (shield-bearer's crown ≈ just above Goliath's waist; Goliath ≈ 2× a man's shoulder width; Saul ≈ a head above the soldiers).
+- **Goliath is size-capped, and the cap is written as landmarks, not adjectives.** He is a huge *man* (a little under twice an ordinary man's height), never a mythic titan. Superlative mass vocabulary — *colossal, enormous, monumental, towering, earth-shaking, ground tremor* — is what makes the model inflate him mid-shot into a 15 m giant, so prompts state the **scale cage** instead: two or three body-meeting contacts (crown-to-belt, knee-to-hip, elbow-to-crest), the shoulder-width multiple, and the ceiling ("a little under twice his height", "both men whole in one frame on one ground line"). Restate the cage in ACTION at the reveal beat *and* in POSITIVE LOCKS, and keep his weight **relative** ("heavier and slower than the bearer's step") rather than seismic. Avoid god's-eye overheads in a scale shot — they destroy the ground line the comparison depends on; use a high three-quarter that keeps both pairs of feet in frame. See [crs_table_Goliath_Complex.md](crs_table_Goliath_Complex.md#the-scale-cage-bounding-a-giant).
 - **Subtitles / name supers / score are added in the edit.** Every prompt locks *diegetic sound only, no music, no on-screen text.*
 
 | Clip | Scene | Beat | Runtime | Status |
@@ -191,8 +192,9 @@ no on-screen text.
 ```
 SCENE CONTEXT
 On the Philistine plain a broad shield-bearer strides out of the heat-shimmer and plants — for
-a beat he looks like the champion. Then Goliath rises behind him, dwarfing him, and takes three
-heavy steps forward.
+a beat he looks like the champion. Then Goliath steps up behind him and stops: everything from
+Goliath's belt upward — chest, shoulders, head — rises above the bearer's crown. Goliath then
+takes three heavy steps forward.
 
 ACTIVE REFERENCES
 @valley_plain_3qf — a dry open valley battlefield floor, two rocky slopes framing it left and
@@ -201,77 +203,101 @@ reference.
 @shield_bearer — a broad thick-set Philistine strongman at ordinary height; banded bronze
 corselet, bronze cap with a short feather crest, bronze/slate/teal/oxblood palette; hard
 watchful face. 100% matches the reference.
-@goliath — a colossal Philistine giant of enormous mass; coppery-bronze fish-scale lamellar
-cuirass, bronze pauldrons with a central boss, engraved vambraces and greaves, domed bronze
-helmet, heavy brow, thick dark beard; about twice a man's shoulder width. 100% matches the
+@goliath — a giant of a man built on human proportions, heavyweight-wrestler mass: coppery-bronze
+fish-scale lamellar cuirass, bronze pauldrons with a central boss, engraved vambraces and greaves,
+domed bronze helmet, heavy brow, thick dark beard. He stands a little under twice
+@shield_bearer's height and about twice @shield_bearer's shoulder width. 100% matches the
 reference.
-@goliath_shield — a huge bronze tower shield with a domed central boss, covering a grown man
-shin-to-shoulder; carried by the shield-bearer. 100% matches the reference.
+@goliath_shield — a bronze-and-wood tower shield with a domed central boss, sized to Goliath's frame
+rather than fitted to the man carrying it: set on the ground its lower rim is level with
+@shield_bearer's ankles and its top rim rises about two and a half head-heights above his crown, so
+his crown reaches only about seven-tenths of the way up the shield, and it is about twice as wide as
+his shoulders are broad. He carries it with both arms and his shoulder, with visible effort. 100%
+matches the reference.
 @goliath_spear — a weaver's-beam thick dark hardwood shaft with a massive leaf-shaped iron head,
 taller than a man; held at Goliath's side. 100% matches the reference.
 @cast_scale — the cast ground-line lineup; use for relative proportion only.
 
 LOCATION MAP
 Foreground: heat-shimmering cracked earth. Midground: the shield-bearer plants centre, Goliath
-rises behind him. Background: the barren Philistine slope massed with distant troops. Camera low
-and near the ground on the shadow side, tilting up.
+steps up behind him. Background: the barren Philistine slope massed with distant troops. Camera
+low and near the ground on the shadow side, tilting up.
 
 FIRST FRAME / BLOCKING
 Low worm's-eye, camera near ground level looking up through the heat-shimmer; the shield-bearer
 strides out of the haze into centre frame with the tower shield and plants, filling the frame
 heroically — nothing yet revealed behind him.
+Scale cage — every one of these stays true in every frame once both men share the shot:
+@shield_bearer's crown reaches just above Goliath's waist, at his belt line.
+Goliath's kneecap sits level with @shield_bearer's hip.
+With Goliath's arm hanging at his side, his elbow rides just above @shield_bearer's feather crest.
+Goliath's shoulders are about twice @shield_bearer's shoulder width.
+Two men of @shield_bearer's height standing one on the other's shoulders would overtop Goliath.
+Both men keep their feet on the same visible ground line and both fit whole inside the frame
+together, the bearer's full body from crest to boots readable beside Goliath.
 
 FORMAT MODE
 One continuous crane shot in three moves, the camera does not cut on its own.
 
 OPTICS
 63° wide FOV, low-angle — a wide low lens that lets the nearer figure loom and the background
-recede. No lens change mid-shot; natural motion blur.
+recede. No lens change mid-shot; natural motion blur. From the reveal onward both men sit at
+similar camera distance so perspective reports their sizes honestly.
 
 CAMERA
 A single unbroken crane. Move 1: planted low and tilted up, glorifying the shield-bearer.
-Move 2: the crane climbs, still angled low, to contain Goliath rising behind — the effort of
-the tilt-up is the shock; keep the angle low so Goliath never shrinks. Move 3: the crane rises
-up and over into a high god's-eye two-shot looking down over both bodies.
+Move 2: the crane climbs, still angled low, to contain Goliath standing behind — the effort of
+the tilt-up is the shock; keep the angle low so Goliath keeps his full height. Move 3: the crane
+settles at about the height of Goliath's helmet and swings a quarter around into a high
+three-quarter two-shot that looks down the length of both bodies with both pairs of boots on the
+same ground line in frame.
 
 ACTION
-0.0s to 4.0s — the shield-bearer strides out of the shimmer and plants, tower shield set,
-reading huge from below.
-4.0s to 8.0s — Goliath rises into frame behind him; the camera keeps climbing to hold him, the
-shield-bearer's crown sitting only just above Goliath's waist, Goliath twice as broad across the
+0.0s to 4.0s — the shield-bearer strides out of the shimmer and plants, tower shield set, his crown
+reaching only about seven-tenths of the way up it, reading huge from below.
+4.0s to 8.0s — Goliath steps up behind him and stops; the camera keeps climbing to hold him. The
+bearer's crown sits just above Goliath's belt, Goliath's kneecap level with the bearer's hip,
+Goliath's hanging elbow just above the bearer's crest, Goliath twice as broad across the
 shoulders, his spear a dark column at his side.
-8.0s to 12.0s — the camera cranes up and over into a high top-down over both, the "muscle-man"
-now tiny beside the giant; Goliath takes three slow heavy steps forward as the shield-bearer
-steps aside.
+8.0s to 12.0s — the camera swings around into the high three-quarter two-shot, the "muscle-man"
+small beside Goliath and still whole in frame, the same belt-line, knee-to-hip and elbow-to-crest
+contacts holding from the new angle; Goliath takes three slow heavy steps forward as the
+shield-bearer steps aside.
 
 PERFORMANCE
 The shield-bearer plays it hard and proud, jaw set, scanning the far slope. Goliath moves with
-immense unhurried weight, chin high, contemptuous. Pore-level skin, sweat sheen in the heat,
-living eyes.
+the unhurried weight of a very large man — each step slower and heavier than the bearer's, chin
+high, contemptuous. Pore-level skin, sweat sheen in the heat, living eyes.
 
 PHYSICS
-Each of Goliath's footfalls lands with real mass — dust punches up around the boot, a faint
-ground tremor. The tower shield has weight in the bearer's arm. Heat-shimmer bends the air;
-sweat and fine dust cling to skin.
+Each of Goliath's boots sets down with real weight — a low puff of dust lifts around the sole,
+his greaves and bronze scale creaking on the step. The ground stays firm and still beneath him
+and the camera holds steady through the footfalls. The tower shield hangs heavy in the bearer's
+arm, his shoulder dropping under it. Heat-shimmer bends the air; sweat and fine dust cling to
+skin.
 
 LIGHTING
 Harsh midday sun from high, 5600K, hard short shadows, heat-shimmer haze 30% low to the ground.
 Arid ochre and grey ground, bronze armour catching the sun.
 
 AUDIO
-Wind and heat-buzz, the bearer's boots on cracked earth, then Goliath's heavy earth-shaking
-footfalls, a distant massed murmur from the Philistine slope. Diegetic sound only, no music, no
-on-screen text.
+Wind and heat-buzz, the bearer's boots on cracked earth, then Goliath's boot-falls — deeper,
+slower and heavier than the bearer's, leather and bronze creaking with each step, the ground
+sound staying dry and solid. A distant massed murmur from the Philistine slope. Diegetic sound
+only, no music, no on-screen text.
 
 STYLE
-Photoreal, hyperreal, monumental scale, fine grain.
+Photoreal, hyperreal, grounded epic realism, true human proportions at giant size, fine grain.
 
 POSITIVE LOCKS
-The shield-bearer's crown reaches just above Goliath's waist and Goliath is twice as broad
-across the shoulders — lock this on the low upward reveal and hold it through the top-down (the
-overhead angle does not flatten Goliath's height). Goliath keeps his coppery-bronze scale
-cuirass and domed helmet; the tower shield stays with the bearer, the weaver's-beam spear with
-Goliath. Single high sun. Diegetic sound only, no music, no on-screen text.
+Hold the scale cage in every frame and from every angle: the bearer's crown at Goliath's belt
+line, Goliath's kneecap at the bearer's hip, Goliath's hanging elbow just above the bearer's
+crest, Goliath about twice the bearer's shoulder width, Goliath a little under twice the bearer's
+height, both men whole in frame on one ground line. Goliath stays a huge man of human
+proportion at every moment of the shot, the same size at 12.0s as at 4.0s. The tower shield stays
+at its own capped size — the bearer's crown reaching only about seven-tenths of the way up it, its
+lower rim at his ankles — and stays in his hands; the weaver's-beam spear stays with Goliath. Goliath keeps his coppery-bronze scale cuirass
+and domed helmet. Single high sun. Diegetic sound only, no music, no on-screen text.
 ```
 
 ---
@@ -292,14 +318,15 @@ On the Philistine plain, Goliath sweeps his gaze across the Israelite mountain a
 then laughs.
 
 ACTIVE REFERENCES
-@goliath — a colossal Philistine giant; coppery-bronze fish-scale cuirass, bronze pauldrons with
-a central boss, domed bronze helmet, heavy brow, thick dark beard; about twice a man's shoulder
-width. Voice: huge, booming, deep, arrogant, echoing across the valley. 100% matches the
-reference.
+@goliath — a giant of a man built on human proportions, heavyweight mass; coppery-bronze fish-scale
+cuirass, bronze pauldrons with a central boss, domed bronze helmet, heavy brow, thick dark beard;
+a little under twice an ordinary man's height and about twice an ordinary man's shoulder width.
+Voice: huge, booming, deep, arrogant, echoing across the valley. 100% matches the reference.
 @valley_plain_3qf — a dry open battlefield floor, two rocky slopes framing it, heat shimmer low
 to the ground. 100% matches the reference.
 @goliath_spear — a weaver's-beam dark hardwood shaft with a leaf-shaped iron head, taller than a
-man, planted at his side. 100% matches the reference.
+man; planted butt-down at his side, its head reaching about to his shoulder. 100% matches the
+reference.
 
 LOCATION MAP
 Foreground: cracked earth and shimmer. Midground: Goliath centre, spear planted, facing the
@@ -342,8 +369,11 @@ Line: "I see you all cowering on your mountain. Soon to be your grave." Diegetic
 music, no on-screen text.
 
 POSITIVE LOCKS
-Goliath keeps his coppery-bronze scale cuirass and domed helmet, spear planted at his side; the
-low angle keeps him towering; single high sun. Diegetic sound only, no music, no on-screen text.
+Goliath keeps his coppery-bronze scale cuirass and domed helmet, spear planted at his side with
+its head at about his shoulder — that contact holds all the way through the push-in and caps his
+size. He stays a huge man of human proportion, the same size in the last frame as in the first;
+the low angle keeps his full height without stretching him. Single high sun. Diegetic sound only,
+no music, no on-screen text.
 ```
 
 ---
@@ -366,11 +396,14 @@ Goliath issues the wager — pick a champion, and if he wins the Philistines wil
 slaves — and the Philistine army roars with laughter while his shield-bearer snickers.
 
 ACTIVE REFERENCES
-@goliath — colossal Philistine giant; coppery-bronze scale cuirass, domed bronze helmet, heavy
-brow, dark beard; about twice a man's shoulder width. Voice: huge, booming, mocking. 100%
-matches the reference.
+@goliath — a giant of a man built on human proportions, heavyweight mass; coppery-bronze scale
+cuirass, domed bronze helmet, heavy brow, dark beard; a little under twice @shield_bearer's height
+and about twice @shield_bearer's shoulder width. Voice: huge, booming, mocking. 100% matches the
+reference.
 @shield_bearer — a broad Philistine strongman at ordinary height, banded bronze corselet,
-feather-crested cap; his crown reaches just above Goliath's waist. 100% matches the reference.
+feather-crested cap; his crown reaches just above Goliath's waist at the belt line, Goliath's
+kneecap sits level with his hip, and Goliath's hanging elbow rides just above his feather crest.
+100% matches the reference.
 @philistine_army — a massed foreign host on the barren slope behind, bronze/slate/teal/oxblood
 gear, varied faces and builds. 100% matches the reference.
 @valley_plain_3qf — a dry open battlefield floor framed by two rocky slopes, heat shimmer. 100%
@@ -385,7 +418,9 @@ Philistine army. Camera low-ish on the shadow side.
 
 FIRST FRAME / BLOCKING
 Low wide on Goliath centre, spear in hand, the shield-bearer at his flank, the massed army
-rising behind.
+rising behind. Scale cage, true in every frame both men share: the bearer's crown at Goliath's
+belt line, Goliath's kneecap at the bearer's hip, Goliath's shoulders about twice the bearer's
+width, both men whole in frame with their boots on one visible ground line.
 
 FORMAT MODE
 Sequential cuts, no timecodes. Cuts only at the specified points, the camera does not cut on its
@@ -423,9 +458,12 @@ Goliath's booming challenge, then a huge rolling wave of army laughter, the shie
 nearer snicker. Lines as above. Diegetic sound only, no music, no on-screen text.
 
 POSITIVE LOCKS
-The shield-bearer's crown stays just above Goliath's waist; Goliath keeps his scale cuirass,
-domed helmet and spear; the host stays Philistine-geared on the barren slope; single high sun.
-Diegetic sound only, no music, no on-screen text.
+The shield-bearer's crown stays just above Goliath's waist at the belt line, Goliath's kneecap
+stays level with the bearer's hip, and Goliath stays a little under twice the bearer's height and
+about twice his shoulder width — the same size on CUT 3 as on CUT 1, a huge man of human
+proportion throughout. Goliath keeps his scale cuirass, domed helmet and spear; the host stays
+Philistine-geared on the barren slope; single high sun. Diegetic sound only, no music, no
+on-screen text.
 ```
 
 ---
@@ -449,10 +487,12 @@ roars in approval, and the camera sweeps across the valley and pushes into the I
 line to find fear on the soldiers' faces.
 
 ACTIVE REFERENCES
-@goliath — colossal Philistine giant; coppery-bronze scale cuirass, domed bronze helmet; about
-twice a man's shoulder width. Voice: huge, booming, triumphant. 100% matches the reference.
-@philistine_army — a massed foreign host on the barren slope, bronze/slate/teal/oxblood gear.
-100% matches the reference.
+@goliath — a giant of a man built on human proportions, heavyweight mass; coppery-bronze scale
+cuirass, domed bronze helmet; a little under twice an ordinary soldier's height and about twice an
+ordinary soldier's shoulder width. Voice: huge, booming, triumphant. 100% matches the reference.
+@philistine_army — a massed foreign host on the barren slope, bronze/slate/teal/oxblood gear; the
+nearest of them stand at about Goliath's waist, the on-screen yardstick for his size. 100% matches
+the reference.
 @israel_camp_3qf — the Israelite camp's cleared front edge overlooking the valley, rows of tents
 behind. 100% matches the reference.
 @israelite_army — Israelite front-line soldiers, fearful baseline, varied faces and builds, kit
@@ -502,6 +542,8 @@ uneasy muttering, shuffling feet, tense breath. Line as above. Diegetic sound on
 on-screen text.
 
 POSITIVE LOCKS
+Goliath stays a huge man of human proportion — the nearest Philistine soldiers reach about his
+waist and he is about twice their shoulder width, holding that size for as long as he is in frame.
 Goliath keeps his scale cuirass and domed helmet; Philistine host on the barren slope, Israelite
 soldiers in distinct kit at their cleared front edge with tents behind; visible fear on the
 Israelite faces; single high-left sun held across the whole pan. Diegetic sound only, no music,

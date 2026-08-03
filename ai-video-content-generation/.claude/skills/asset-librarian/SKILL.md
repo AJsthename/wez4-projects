@@ -24,7 +24,7 @@ Create it on first registration; keep this exact structure:
 |---------|-----|------|-------|------------------|--------|
 | Mom | @mom | assets/characters/mom_sheet_v2.png | — | auburn shoulder-length hair, green apron, gold ring left hand | final |
 | David | @david | assets/characters/david_v1.png | 0.99× base; crown ≈ Saul's chin, ≈ Goliath's navel | rosy complexion, slight wiry youth, sheepskin mantle left shoulder | final |
-| Goliath | @goliath | assets/characters/goliath_v1.png | 1.86× base; ~2× shoulder width; Saul's crown ≈ his mid-chest | colossal mass, bronze scale armor, heavy brow, thick dark beard | final |
+| Goliath | @goliath | assets/characters/goliath_v1.png | 1.86× base; ~2× shoulder width; Saul's crown ≈ his mid-chest; his knee ≈ a man's hip; **ceiling: a little under 2× a man's height** | heavyweight mass (not *colossal* — see note), bronze scale armor, heavy brow, thick dark beard | final |
 
 ## Locations
 | Element | Tag | File | Scale | Critical details | Status |
@@ -49,6 +49,7 @@ Create it on first registration; keep this exact structure:
 - **Tag** — the `@tag` video prompts will use. Lowercase, underscores, short, unique. Derived from the element name once and never changed — prompts reference it forever.
 - **File** — relative path to the accepted sheet/plate image. Keep assets under `assets/characters/`, `assets/locations/`, `assets/props/`, `assets/scale/`.
 - **Scale** — the element's size relative to the project base unit, from the **asset-scale** Scale Bible: a ratio + the **landmark line(s)** for pairs it appears with ("crown ≈ Goliath's navel"), or a body-anchored size for props ("hand-sized", "taller than Saul"). Like Critical details, this is **restated in words** in every multi-character prompt, because sheets can't encode relative size. Leave `—` when the element never needs a size comparison.
+  **For any element whose size is the story point, record the full scale cage here, not one landmark** — two or three body contacts, *plus the ceiling* ("a little under 2× a man's height"), plus the prop's cap where relevant ("≈1.35× the bearer's height, never past 1.5×; his crown reaches only ~7/10 up the shield"). A landmark alone gives the model a minimum and no maximum, and the figure inflates across the generation. Keep the banned-superlative note in Critical details too (say "heavyweight mass", never "colossal"), since that field is copied verbatim into prompts. Full rationale in **asset-scale**.
 - **Critical details** — the small, droppable details (logos, text, exact colors, marked buttons) that must be **restated in words** in every video prompt even though they're on the reference image. This column exists because generation drops small details; whoever writes the prompt copies these into the text. Include a recurring cameo's **locked signature features** here.
 - **Status** — `draft` (generated, not yet accepted), `final` (passed QA, safe to reference), `retired` (superseded — note the replacement).
 

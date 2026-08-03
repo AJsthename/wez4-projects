@@ -3,6 +3,10 @@
 **Project:** "The Goliath Complex" (Gulayat) — ANN / David & Goliath, 1 Samuel 17
 **Style:** Realism/Hyperrealism (not 3D animation)
 **Sheet standard:** Solid mid-gray studio background · four-view product-style layout (front, back, side, 3/4) · soft studio lighting, grounding shadow, subtle reflections (physical *volume* is the acceptance bar) · scale stated as a **body landmark**, never in centimetres · no text labels, no hands, no scenery.
+
+> **No people in a referenceable sheet — ever.** Not a figure, not a silhouette, not a mannequin, not a hand. A person baked into a prop sheet is attached to every video prompt that references that prop, and the video model may render them into the shot. It also wastes view slots. Size is carried by **internal proportion cues** (a grip sized to a normal forearm and spanning a stated fraction of the object) and by the **body-landmark text in the video prompt** — never by a figure in the sheet. If a ratio needs visual proof, generate a **separate QA-only comparison image**, check it once, and never register or upload it.
+>
+> **State empty hardware positively.** The trailing "no hands" exclusion is not reliable — it produced a leather glove and a gripping hand inside `@goliath_shield` v2's strap. For anything with a strap, grip, handle, hilt or opening, write it as a property of the object: *"the forearm strap and hand-grip are empty and unoccupied — bare leather and bare wood, the inner face plainly visible."* This matters most for the still-unbuilt `@saul_armor`, where a mannequin or body form is the obvious failure mode.
 **Scale source:** [crs_table_Goliath_Complex.md](crs_table_Goliath_Complex.md) (the Scale Bible). Built with the **asset-prop** skill.
 
 ---
@@ -14,7 +18,7 @@ Rule (from asset-prop / asset-planner): a prop earns a sheet when it is **held/u
 | # | Prop | Tag | Sheet? | Why | Scale anchor |
 |---|------|-----|--------|-----|--------------|
 | 1 | Goliath's spear | `@goliath_spear` | GENERATE | carried, hero weapon, scale gag | shaft **taller than Saul** |
-| 2 | Goliath's tower shield | `@goliath_shield` | GENERATE | carried by shield-bearer "before him" | covers a grown man shin-to-shoulder |
+| 2 | Goliath's tower shield | `@goliath_shield` | GENERATE (**v2 pending**) | carried by shield-bearer "before him" | **taller than the bearer** — top rim above his crest, lower rim at his ankles (≈1.5× the v1 sheet) |
 | 3 | Goliath's sword | `@goliath_sword` | GENERATE | David draws it to behead Goliath (interaction) | so large David needs **both hands**, nearly his own height |
 | 4 | David's shepherd's staff | `@david_staff` | GENERATE | carried, then thrown aside; "a stick" gag | ≈ **David's own height** when planted |
 | 5 | David's sling, pouch & 5 stones | `@david_sling_kit` | GENERATE | the hero weapon; slow-mo stone (Clip 89) | sling hand-length; stones **fist-sized** |
@@ -65,24 +69,79 @@ Clean sheet layout, no text labels, no hands, no scenery.
 
 ## 2. Goliath's Tower Shield — `@goliath_shield`
 
-**Description:** The large body-shield carried *before* Goliath by his shield-bearer. Tall enough to cover a grown man from shin to shoulder; bronze-faced over wood and hide, with a central boss. Not strapped to Goliath — the bearer holds it (Clips 3, 83, 88).
+**Description:** The body-shield carried *before* Goliath by his shield-bearer. It is sized to Goliath's frame rather than fitted to the 165 cm man who lugs it — **about one and a third the bearer's own height (target 1.35×, ceiling 1.5×), and roughly two and a half times as tall as it is wide.** Standing it on the ground beside the bearer, its lower rim sits at his ankles and its top rim about two and a half head-heights above his crown, so **his crown reaches only about seven-tenths of the way up the shield** and his shoulders sit a little above its midpoint. Wide enough to cover Goliath's chest — about twice an ordinary man's shoulder span — so the bearer can crouch entirely behind it. On Goliath the shield covers shin to upper chest. Bronze-faced over wood and hide, with a domed central boss. Not strapped to Goliath — the bearer holds it, and it takes both his arms and his shoulder to move (Clips 3, 83, 88).
 
-### Image-Generation Prompt
+**The accepted design is v3's** — vertical wood planks under a bronze cross-band and rim, domed boss, dark patina. v4 changes **size only**, plus two hygiene fixes. Keep the look.
+
+> ### ⚠️ Generation log — v1 too small, v2 4–5× too large, v3 too small again, v4 = design locked + size fixed
+> - **v1** — specced *"covers a grown man shin-to-shoulder"*, generated at exactly that: a well-fitted shield for the bearer, not a champion's.
+> - **v2** — over-corrected to ~**4–5×** the man's height (a gate) on *"enormous"*, *"built for a giant warrior"*, *"with room to spare"*, and a *"**small** grey silhouette"* yardstick the model duly shrank.
+> - **v3** — bounded ratios were correct and internally consistent, and the model **ignored them and came back at ~0.85× the man** (shield to his shoulder — a v1 repeat). **Cause: the size-class analogue was in the wrong class.** *"The same size class as a Roman scutum or a Norman kite shield"* names two **man-fitted** shields, and it was the most concrete statement in the prompt, so it beat every ratio line. *"A shield he could hold"* and *"a heavy burden for one man"* pulled the same way. **A size-class analogue is the strongest lever in a prop prompt — which makes a wrongly-chosen one the most destructive.** Verify the analogue is actually in the target class before naming it; here, a door leaf is, a scutum is not.
+> - **v3's second, worse problem — the yardstick figure was baked into the referenceable sheet.** A human figure inside a prop sheet is a **bleed risk**: every video prompt that attaches this sheet is attaching a picture of a man, and Seedance may render him. It also ate two of the four view slots, so the sheet only delivered three object views. **A referenceable sheet must contain the object and nothing else.** The scale proof belongs in a separate, QA-only image that is never uploaded to a video prompt.
+> - **v4 (below)** — two prompts: the **hero sheet** (object only, no figure, empty strap) which becomes `@goliath_shield_v4.png`, and an optional **scale-check image** used once to verify proportion and then set aside. Tag unchanged (`@goliath_shield`).
+>
+> See the [scale cage](crs_table_Goliath_Complex.md#the-scale-cage-bounding-a-giant).
+
+### Image-Generation Prompt (v4 — the hero sheet, this is the referenceable asset)
+
+No human figure of any kind. Absolute size is carried by the **internal proportion cues** (strap width, boss size, aspect ratio) — these read as "built for someone much larger" without putting a person in the frame:
+
 ```
 Product-style reference sheet of a large ancient tower shield on a solid mid-gray studio background,
 even soft studio lighting, soft grounding shadow, subtle reflections on the bronze.
-Four views of the same object: [1] front, [2] back, [3] side profile, [4] three-quarter view.
-Object: a tall rectangular-oval body shield, tall enough to cover a grown man from shin to shoulder,
-hammered bronze facing over a wooden and layered-hide core, a domed central bronze boss, riveted rim,
-leather forearm strap and hand-grip visible on the back view. Battle-scarred, dented, weathered patina.
-Clean sheet layout, no text labels, no hands, no scenery.
+Four views of the same object, consistent across all views:
+[1] front, [2] back, [3] side profile, [4] three-quarter view.
+Object: a tall rectangular-oval body shield with rounded ends, roughly two and a half times as tall as
+it is wide. Vertical wooden planks across the face under a bronze vertical spine and horizontal
+cross-band, a domed central bronze boss, riveted bronze rim, dark weathered bronze and aged wood,
+battle-scarred and dented.
+Proportions that set its size — hold these exactly: the domed central boss is about a quarter of the
+shield's width, the size of an adult man's head. On the back, a single broad leather forearm strap
+and a wooden hand-grip, both sized for an ordinary adult man's arm, together spanning only about a
+third of the shield's width and sitting well inside the rim, so the shield is clearly far larger than
+the man who would carry it. About seven vertical planks across the face. In height it is a little
+taller than a full-height interior door leaf.
+The forearm strap and hand-grip are empty and unoccupied — bare leather and bare wood, the shield's
+inner face plainly visible through and around them.
+The shield stands alone in every view. Clean sheet layout, no text labels, no scenery.
 ```
-### QA Checklist
-- [ ] Front shows the bronze face + boss; **back view shows the strap and grip** (how the bearer holds it)
-- [ ] Reads **tall/heavy** — a body shield, not a small round buckler
+
+### QA Checklist — hero sheet
+- [ ] **The object stands alone — no human figure, silhouette, mannequin or partial body in any view.** Any figure at all → reject and reroll; it will bleed into video generations
+- [ ] **Strap and grip are empty** — no glove, no gauntlet, no hand, no forearm, no arm inside them
+- [ ] **Strap + grip span ≈ ⅓ of the shield's width; boss ≈ ¼ of the width.** If the strap looks like a comfortable fit across the back, the shield is reading man-sized → reject
+- [ ] Aspect ratio ≈ **2.5 : 1** (tall, not a door-shaped slab or a narrow plank)
+- [ ] Four **object** views present — front, back, side profile, three-quarter (no view spent on anything else)
+- [ ] Design matches the accepted v3 look — vertical planks, bronze spine + cross-band, domed boss, dark patina
 - [ ] Curvature/thickness visible in the side view (volume, not a flat plate)
-- [ ] Consistent dents/wear across views
-- [ ] Background solid mid-gray
+- [ ] Consistent dents/wear across views; background solid mid-gray
+
+### Image-Generation Prompt (v4-scale — QA ONLY, never upload to a video prompt)
+
+Run this **once** to confirm the size reads right, check it, then set it aside. Do **not** register it as a referenceable element and do **not** attach it to a Seedance prompt — it contains a human figure by design, which is exactly what must not reach a video generation.
+
+```
+Scale comparison diagram on a plain mid-gray background, flat even lighting, orthographic side-by-side
+layout, no perspective.
+On the left, a plain flat grey silhouette of an average-height adult man, standing upright, facing
+forward, arms at his sides.
+On the right, standing on the same ground line, a tall rectangular-oval bronze-and-wood tower shield
+with a domed central boss, resting upright on the ground.
+Their relative size, drawn exactly: the shield is about one and a third times the man's height. Its
+lower rim is level with his ankles and its top rim rises about two and a half head-heights above the
+top of his head, so THE MAN'S CROWN REACHES ONLY ABOUT SEVEN-TENTHS OF THE WAY UP THE SHIELD and his
+shoulders sit a little above the shield's midpoint. The shield is about twice as wide as his
+shoulders are broad.
+Two separate objects side by side, not touching. No text, no labels, no arrows, no scenery.
+```
+
+### QA Checklist — scale check
+- [ ] **Measure it: the man's crown lands at ~0.7 of the shield's height** (shoulders a little above the midpoint). Crown at or above ~0.85 → too small, a v1/v3 repeat. Crown below ~0.4 → too large, a v2 repeat
+- [ ] Shield height reads **between 1.2× and 1.5× the man** — a little taller than a doorway, never a gate or a wall
+- [ ] Shield width ≈ twice the man's shoulder span
+- [ ] Both objects on one ground line, no perspective foreshortening
+- [ ] **This image is filed as QA evidence only** — not registered, not uploaded to any Seedance prompt
+> **Scale in the shot:** state "its lower rim at the shield-bearer's ankles, its top rim about two and a half head-heights above his crown — his crown reaching only about seven-tenths of the way up the shield" — never centimetres, and never a bare "taller than a man" (a floor with no ceiling is what produced v2). The shield then works as a **second yardstick** capping Goliath's size in frame, which only holds if the shield itself is capped.
 
 ---
 
@@ -358,6 +417,7 @@ Clean sheet layout, no text labels, no hands, no scenery.
 
 - **Register** each accepted sheet via the **asset-librarian** skill (create `assets/MANIFEST.md` for this project on first registration). Copy the **scale anchor** into the manifest's Scale field and any critical detail (brand-neutral, no-text, red-arrow) into Critical details.
 - **Scale-critical props** — spear, tower shield, Goliath's sword, David's staff, Saul's armor — enforce the body-landmark phrasing in every Seedance prompt; never write centimetres.
+- **A giant's prop is specced oversized for whoever handles it, not fitted to them.** Anchoring it to "a grown man" produces a prop that looks correct on the ordinary man and wrong on the giant — the `@goliath_shield` v1 mistake. Anchor to the giant's frame, then state how far past the handler's body it overhangs. The over-scaled prop then works as a **second yardstick** capping the giant's size on screen. Same logic applies in reverse to `@saul_armor` (built for the king, swallows David) — which is why that gag reads correctly.
 - **Assumptions flagged (change if wrong):** (1) the provisions cart is a hand/push cart, not ox-drawn; (2) `@jesse_provisions` and `@ann_artifact` are light/optional — drop to inline if they don't earn screen time.
 - **Next:** promote clips to Seedance prompts once character, location, and prop sheets are finalised and registered (see the [Scene & Clip Breakdown](script_&_scenes/Goliath_Complex_Scene_&_Clip_Breakdown.md)).
 
